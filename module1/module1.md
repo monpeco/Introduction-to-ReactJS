@@ -20,3 +20,46 @@ Tags: `React Elements`, `JSX`, `functional components`, `composition`
 ---
 
 #### Module 1 | JSX and React Components   Setting up ReactJS   Setting Up ReactJS
+
+# Setting Up ReactJS
+
+The following steps are used to add ReactJS to an HTML file:
+
+1. Create an HTML file
+ 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+       <meta charset="UTF-8">
+
+ 
+  </head>
+  <body>
+  </body>
+</html>
+```
+
+2. Add scripts to include react.js, react-dom.js and babel.js inside the head of the HTML file
+
+```html
+
+```
+
+3. Add a babel script within the body of the HTML file
+
+```html
+
+```
+
+4. Add <div id="root></div> to the body of the HTML file
+
+```html
+
+```
+
+5. Start rendering elements using ReactJS
+
+```html
+
+```
