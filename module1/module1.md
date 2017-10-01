@@ -114,3 +114,73 @@ https://codepen.io/Monpeco/pen/VMzWMN
 --- 
 
 #### Module 1 | JSX and React Components   What is ReactJS   What is ReactJS?
+
+# What is ReactJS?
+
+ReactJS is a library that generates the view layer of an application based on its state. ReactJS applications are built from React 
+Components - independent resusable components that describe how the UI should look based on their own state and properties.
+
+### Why should I use ReactJS?
+
+* ReactJS applications are incredibly performant at UI rerendering
+* React Components make writing UI components easier
+* What makes ReactJS so efficient at rerendering?
+
+React Components are used to generate a Virtual DOM - a light-weight abstraction of the actual HTML DOM. 
+The Virtual DOM is able to be generated much more quickly than the HTML DOM because it does not have to 
+calculate CSS styles and layouts. When a React Component changes state, the Virtual DOM is recreated and 
+the difference between the new Virtual DOM and the previous Virtual DOM is calculated. The ReactJS library 
+then calculates the most efficient way to update the HTML DOM to reflect these changes. This ends up being 
+much faster than regenerating the entire HTML DOM from the top.
+
+![virtual DOM](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/78967a0e9538885041c75b2dfe5dd2ca/asset-v1:Microsoft+DEV281x+4T2017+type@asset+block/virtualDOM.gif)
+
+### How hard is it to use ReactJS?
+
+ReactJS is a relatively lightweight library and it does not take a whole lot of code to get started with it.
+
+Here is an example of the code needed for a Hello World application:
+
+```html
+   <div id="root"></div>
+```
+
+```javascript
+ReactDOM.render(
+    <h1>Hello World!</h1>,
+    document.getElementById("root")
+)
+```
+
+---
+
+#### Module 1 | JSX and React Components   What is ReactJS   What is ReactJS Video
+
+# What is ReactJS Video
+
+https://youtu.be/mJMsHKoLzFY
+
+> ReactJS is a library that generates the view layer of an application
+> based on its state. ReactJS applications are built from React
+> Components, independent reusable components that describe how the UI
+> should look based on their State and their Properties. So, why should
+> you use ReactJS? Well, ReactJS applications are incredibly performant
+> at UI rendering, and also, React components make writing UI components
+> easy. So, what makes ReactJS so efficient at rerendering? Well, React
+> components are used to generate a virtual DOM, a lightweight
+> abstraction of the actual HTML DOM. The virtual DOM is able to be
+> generated much more quickly than the HTML DOM because it does not have
+> to do a bunch of calculations with the CSS styles and the layout. When
+> a React component changes state, the virtual DOM is recreated, and the
+> difference between the old virtual DOM and the new virtual DOM is
+> calculated. The ReactJS library then calculates the most efficient way
+> to update the HTML DOM and changes only what is necessary for the view
+> to be updated. This ends up being much faster than just rewriting the
+> HTML DOM from the top. So, how hard is it to use ReactJS? ReactJS is
+> actually a relatively lightweight library and does not take a whole
+> lot of code to get started. So, if you're ready to begin, let's
+> continue on and learn how to write a ReactJS application.
+
+---
+
+#### Module 1 | JSX and React Components   Rendering Elements   Rendering Elements
