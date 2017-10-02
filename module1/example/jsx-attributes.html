@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+</head>
+<body>
+
+    <div id="root"></div>
+    <div id="div2"></div>
+    <script type="text/babel">
+    
+        //supply attribute value
+        var element = <button className ="deleteButton"> Delete </button>   //the class attribute is set with className
+        
+        ReactDOM.render(
+            <div>{element}</div>,
+            document.getElementById("root")
+        )
+        
+        //supply attributes values by embedding a JavaScript expression using curly braces
+        var product = {
+            imageURL: "data:image/png;base64,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"
+        }
+        
+        var element2 = <img src ={product.imageURL}></img>
+        
+        ReactDOM.render(
+            <div>{element2}</div>,
+            document.getElementById("div2")
+        )
+        
+    </script>
+
+</body>
+</html>

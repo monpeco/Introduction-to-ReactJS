@@ -321,4 +321,23 @@ function calculateArea(x,y){
 var element = <div>The Area is: {calculateArea(length,width)}</div>
 ```
 
+### Using JSX with Attributes
 
+You can supply attribute values using a string literal surrounded by quotes:
+
+```javascript
+var element = <button className ="deleteButton"> Delete </button>
+```
+You can also supply attributes values by embedding a JavaScript expression using curly braces:
+
+```javascript
+var element = <img src ={product.imageURL}></img>
+```
+Do not surround curly braces with quotes. This will cause your expression to be treated as a string literal:
+```javascript
+//Do not do this
+var element = <img src ="{product.imageURL}"></img>
+```
+Some common HTML attributes are named differently in JSX. For example `class` becomes `className` 
+because `class` is a reserved keyword in JavaScript. Furthermore, attribute names in JSX follow the 
+camelCase naming convention so an HTML attribute such as `fontsize` would become `fontSize` in JSX.
