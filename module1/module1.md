@@ -236,3 +236,33 @@ setInterval(updateNum,100)
 ---
 
 #### Module 1 | JSX and React Components   Rendering Elements   Rendering Elements Video
+
+Rendering Elements Video
+
+https://youtu.be/xz2euIClwgo
+
+> React elements are the building blocks of react JS applications. A
+> react element is an object that represents a DomNode. React elements
+> are written using JSX which is a JavaScript extension, that allows us
+> to write HTML tags in our JavaScript code. So let's take a look at
+> what that looks like. As you can see here in the code, I've written an
+> HTML tag with, Hello World, inside it. And I define that to the
+> element variable. This is something that JSX allows us to do. Now that
+> we've created our react element, how do we render it to the page?
+> Well, if we first look at HTML we'll see that we have a single div
+> element within id of roots. We can target this div and embed our react
+> element inside of it. And we can do that with the ReactDom.render
+> method. Let me show you how that works. The ReactDom.render method
+> takes in two arguments. The first being the element that we're trying
+> to render, and the second being the target. So, if we target that root
+> element we saw earlier and we embed our react element, we can see that
+> Hello World is now rendered to the page. So once a DOM is rendered it
+> will remain the same until another ReactDOM.render method is called.
+> So, if we happen to change this element variable, the page would not
+> re-render. We will have to recall another render method.
+
+Tags: `Re act Element`, `JSX`, `ReactDOM.render()`
+
+---
+
+#### Module 1 | JSX and React Components   JSX   JSX
