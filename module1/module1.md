@@ -289,3 +289,36 @@ var element = React.createElement(
 )
 ```
 
+### Using JSX with JavaScript Expressions
+
+Curly braces can be used to embed JavaScript expressions into JSX.
+
+The following are all examples of valid JavaScript expressions in JSX:
+
+```javascript
+var str = "World!" 
+
+var element =  <h1> Hello {str}</h1>
+```
+
+```javascript
+var item = {
+    name: "Cheese",
+    price: 5
+}
+var element
+t = <p>{item.name} : ${item.price} </p>
+```
+
+```javascript
+var length = 20
+var width = 10
+
+function calculateArea(x,y){
+    return x * y
+}
+
+var element = <div>The Area is: {calculateArea(length,width)}</div>
+```
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+</head>
+<body>
+
+    <div id="root"></div>
+    <div id="div2"></div>
+    <script type="text/babel">
+    
+        var item = {
+            name: "Cheese",
+            price: 5
+        }
+        var t = <p>{item.name} : ${item.price} </p>
+        
+        ReactDOM.render(
+            <div>{t}</div>,
+            document.getElementById("root")
+        )
+        
+        var length = 20
+        var width = 10
+        
+        function calculateArea(x,y){
+            return x * y
+        }
+        
+        var element = <div>The Area is: {calculateArea(length,width)}</div>
+        
+        ReactDOM.render(
+            <div>{element}</div>,
+            document.getElementById("div2")
+        )
+        
+    </script>
+
+</body>
+</html>
