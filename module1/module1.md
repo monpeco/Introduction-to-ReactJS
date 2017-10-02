@@ -266,3 +266,26 @@ Tags: `Re act Element`, `JSX`, `ReactDOM.render()`
 ---
 
 #### Module 1 | JSX and React Components   JSX   JSX
+
+# JSX
+
+### What is JSX?
+
+JSX is a syntax extension to JavaScript that allows React Elements to be written inside JavaScript using HTML tags.
+
+Using JSX, we can create React Elements easily with HTML Tags:
+
+```javascript
+var element = <h1>Hello World!</h1>
+```
+
+Without JSX, the process is much slower and more verbose:
+
+```javascript
+var element = React.createElement(
+    'h1',
+    null,
+    'Hello World!'
+)
+```
+
