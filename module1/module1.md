@@ -543,3 +543,33 @@ the props argument.
 ---
 
 #### Module 1 | JSX and React Components   Functional Components   Functional Components Video
+
+# Functional Components Video
+
+https://youtu.be/fB3fTFGR2JA
+
+> A React component is an independent reusable component that returns a
+> react element based on its properties and its state. There are two
+> types of React components, class components and functional components.
+> However, for now we're gonna cover functional components, as its name
+> suggests, functional components are written similarly to JavaScript
+> functions. Let's write one right now, Over here I am declaring a
+> functional components named HelloWorld in this components will return
+> a header with Hello World inside it. Now how do we use this functional
+> component? Well in our ReactDOM.render function, we can put a tag with
+> the functional component's name as the tag name. So in this case, it
+> would be a tag with HelloWorld in it. And as we can see, our React
+> component is now rendered to the page. Now we can add properties to
+> this React component by adding props as an argument. The individual
+> properties have to be supplied in a way similar to how attributes are
+> declared. So if we have a property called message, you can assign that
+> to something like My Message. And then, in our functional component we
+> can use the curly brace notation to refer to that property. And as you
+> can see here, the message property was supplied and it was, It was
+> referenced by the props.message attribute.
+
+Tags: `React component`, `React element`, `class components`, `functional components`
+
+---
+
+#### Module 1 | JSX and React Components   Composition   Composition
