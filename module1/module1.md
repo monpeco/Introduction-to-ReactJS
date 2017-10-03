@@ -461,3 +461,47 @@ Tags: `JSX`, `JavaScript expression`, `className`
 ---
 
 #### Module 1 | JSX and React Components   Functional Components   Functional Components
+
+# Functional Components
+
+### React Components
+
+A React Component is an independent reusable component that outputs a React Element based on its properties and state.
+
+There are two types of React Components:
+
+* **Functional Components**
+* **Class Components**
+
+**Class Components** have state, lifecycle methods, and properties while **Functional Components** only 
+have properties. In this module, we will cover Functional Components while Class Components will be 
+covered in Module 2.
+
+### Functional Components
+
+Functional Components are just functions that output React Elements. By convention, the first letter 
+of the function name should be capitalized.
+
+Here is an example:
+
+```javascript
+function HelloWorld(){
+    return <h1>Hello World!</h1>
+}
+```
+
+You can use the React Component in JSX by creating an HTML tag with the same name as the React Component:
+
+```javascript
+var element = <HelloWorld/>
+```
+Another Example:
+
+```javascript
+ReactDOM.render(
+    <HelloWorld/>,
+    document.getElementById("root")
+)
+```
+
+These examples will all evaluate to the React Element that is returned by the HelloWorld Component.
