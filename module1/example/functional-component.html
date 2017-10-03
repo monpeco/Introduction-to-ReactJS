@@ -11,6 +11,7 @@
     <div id="root"></div>
     <div id="div2"></div>
     <div id="div3"></div>
+    <div id="div4"></div>
     <script type="text/babel">
     
         // This is the functional component
@@ -30,6 +31,25 @@
         document.getElementById("div2")
         )
         
+        //Adding Properties to Functional Components
+        function HelloWorld2(props){
+            return <h1>Message: {props.message}</h1>
+        }
+        
+       ReactDOM.render(
+            <HelloWorld2 message="Hello World (from adding a property)"/>,
+            document.getElementById("div3")
+        )
+        
+        //string literals, arrays or any other type of JavaScript object
+        function HelloWorldArray(props){
+            return <h1>Value: {props.numberArray[props.index]} </h1>
+        }
+    
+        ReactDOM.render(
+            <HelloWorldArray index = "3" numberArray={[1,2,3,4,5]}/>,
+            document.getElementById("div4")
+        )
     </script>
 
 </body>
