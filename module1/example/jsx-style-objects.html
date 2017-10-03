@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+</head>
+<body>
+
+    <div id="root"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <script type="text/babel">
+    
+        var element = <input className ="nameInput"/>        
+        
+        ReactDOM.render(
+            <div>{element}</div>,
+            document.getElementById("root")
+        )
+        
+        //style attribute can be populated with a style object
+        var styleObject = {
+            backgroundColor: 'red',
+            color:'blue',
+            fontSize: 25,
+            width: 100
+        }
+    
+        var element = <input style = {styleObject}/>
+        
+        ReactDOM.render(
+            <div>{element}</div>,
+            document.getElementById("div2")
+        )
+        
+        var element = <input style = {{width:200,height:100}}/>
+        
+        ReactDOM.render(
+            <div>{element}</div>,
+            document.getElementById("div3")
+        )
+        
+    </script>
+
+</body>
+</html>

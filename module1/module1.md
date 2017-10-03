@@ -341,3 +341,32 @@ var element = <img src ="{product.imageURL}"></img>
 Some common HTML attributes are named differently in JSX. For example `class` becomes `className` 
 because `class` is a reserved keyword in JavaScript. Furthermore, attribute names in JSX follow the 
 camelCase naming convention so an HTML attribute such as `fontsize` would become `fontSize` in JSX.
+
+### Using JSX with Empty Tags
+
+If a HTML tag is empty, you can close it with a '/>' instead of using a closing tag.
+
+```javascript
+var element = <input className ="nameInput"/>
+```
+
+### Using JSX with a Style Object
+
+The style attribute can be populated with a style object instead of a string literal
+
+```javascript
+    var styleObject = {
+        backgroundColor: 'red',
+        color:'blue',
+        fontSize: 25,
+        width: 100
+    }
+
+    var element = <input style = {styleObject}/>
+```
+
+In this next example, the first set of curly braces is for the JSX expression while the second set of curly braces is for the style object:
+
+```javascript
+var element = <input style = {{width:200,height:100}}/>
+```
