@@ -422,3 +422,42 @@ An example using JSX objects within an If Else statement:
 ---
 
 #### Module 1 | JSX and React Components   JSX   JSX Video
+
+# JSX Video
+
+https://youtu.be/9MJSbG-BpPM
+
+> JSX is a syntax extension that allows us to write HTML tags in our
+> JavaScript code. Without JSX, it is much, much more verbose to write
+> React elements. So let's take a look at these examples. The first line
+> uses JSX. Well, the second one doesn't. And as you can see it's a lot
+> more effort. So, that's why JSX is preferred when we want some correct
+> React elements. Curly braces allows us to embed JavaScript expressions
+> into our JSX code. Let's take a look at example. So, over here we have
+> the string variable and we have an item object. We can embed these
+> into our HTML tag using curly braces. So, let's start with the string.
+> So, by putting the string variable name inside the curly braces, we
+> can now see that string has been embedded into our page. So, if we
+> want to reference the item.name and item.price you can do so in a
+> similar fashion. And as you can see here the item.name and price have
+> also been rendered by us using JSX expressions with curly braces. Now
+> lastly, we can also use functions in our curly braces. So, for
+> example, if we use this calculateArea function that I wrote below, and
+> put in some numbers. We can see that functions can also be used in our
+> curly braces. You can supply attribute values using a string literal
+> surrounded by quotes. You can also supply attribute values by
+> embedding a JavaScript expression using curly braces. However, do not
+> surround the curly braces with quotes. This will cause the expression
+> to be treated as a string literal. And one last thing is that certain
+> attributes are named differently in JSX. For example, class in HTML
+> becomes className. Multiple React elements can be rendered at the same
+> time as long as there is one enclosing element that surrounds all of
+> the React elements. So, in this case, we have a div element that
+> encloses both the Hello world divs. However, if we got rid of that div
+> then it wouldn't work.
+
+Tags: `JSX`, `JavaScript expression`, `className`
+
+---
+
+#### Module 1 | JSX and React Components   Functional Components   Functional Components
