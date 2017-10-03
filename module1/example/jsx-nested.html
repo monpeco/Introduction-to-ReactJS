@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+</head>
+<body>
+
+    <div id="root"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <script type="text/babel">
+    
+        //React Elements can be nested within other React Elements as long as the whole thing is wrapped by in a single element
+        var element = (
+            <div>
+                <div>Hello World</div>
+                <div>Hello Another World</div>
+            </div>
+        
+        )        
+        
+        ReactDOM.render(
+            <div>{element}</div>,
+            document.getElementById("root")
+        )
+        
+        var product = {name:"apple",stock:1}
+
+        if(product.stock == 0){
+            var element2 = <h1>The product named {product.name} is not in stock</h1>
+        }
+        else{
+            var element2 = <h1>The product named {product.name} and has {product.stock} units in stock</h1>
+        }
+    
+        ReactDOM.render(
+            element2,
+            document.getElementById("div2")
+        )
+        
+    </script>
+
+</body>
+</html>

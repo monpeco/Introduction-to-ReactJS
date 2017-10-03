@@ -370,3 +370,55 @@ In this next example, the first set of curly braces is for the JSX expression wh
 ```javascript
 var element = <input style = {{width:200,height:100}}/>
 ```
+
+### Using JSX with Nested Elements
+
+React Elements can be nested within other React Elements as long as the whole thing is wrapped by 
+in a single element.
+
+```javascript
+var element = (
+    <div>
+        <div>Hello World</div>
+        <div>Hello Another World</div>
+    </div>
+
+)
+```
+
+This example is not surrounded with a single wrapping element and will throw an error:
+
+```javascript
+    var element = (
+        <div>Hello World</div>
+        <div>Hello World</div>
+    )
+```
+
+It is recommended to surround nested elements with paranthesis to avoid the problems that occur with automatic semicolon insertion.
+
+### Using JSX Objects
+
+Objects created with JSX can be manipulated just like normal JavaScript objects. They can be passed in arrays, used as arguments or return statements to functions and used inside if statements or for loops.
+
+An example using JSX objects within an If Else statement:
+
+```javascript
+   var product = {name:"apple",stock:0}
+
+    if(product.stock > 0){
+        var element = <h1>The product named {product.name} is not in stock</h1>
+    }
+    else{
+        var element = <h1>The product named {product.name} and has {product.stock} units in stock</h1>
+    }
+
+    ReactDOM.render(
+        element,
+        document.getElementById("root")
+    )
+```
+
+---
+
+#### Module 1 | JSX and React Components   JSX   JSX Video
