@@ -679,7 +679,7 @@ Compare that to just defining all the UI in one Functional Component.
 
 #### Module 1 | JSX and React Components   Composition   Composition Video
 
-# 
+# missing video
 
 ---
 
@@ -741,3 +741,33 @@ With the && operator, true and expression will always evaluate to expression. On
 ---
 
 #### Module 1 | JSX and React Components   Conditional Rendering   Conditional Rendering Video
+
+# missing video
+
+---
+
+#### Module 1 | JSX and React Components   Module 1 Tutorial   Module 1 Tutorial
+
+# Module 1 Tutorial
+
+This tutorial is attended to teach you how to model an HTML DOM using React Components.
+
+Link to Codepen Solution:
+https://codepen.io/benjlin/pen/MorPNK
+
+We will be converting the following page into a ReactJS application:
+
+![solution](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/72ada07c8af824ce45450868bb69379d/asset-v1:Microsoft+DEV281x+4T2017+type@asset+block/m1tutorial2.PNG)
+
+### Step 1: Break up the UI into components
+
+The first step is to identify parts of the UI that can be broken into their own components.
+
+![step1](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/cc6b28fdc52e17428d37a4ff048b79ec/asset-v1:Microsoft+DEV281x+4T2017+type@asset+block/m1tutorial2divided.png)
+
+As the above image shows, we have broken up the application into several sections:
+
+* A component that contains a title and description of the shopping application (blue)
+* A component that contains a header a list of three items (red)
+* A component that represents a list items (dark red)
+
