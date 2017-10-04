@@ -771,3 +771,26 @@ As the above image shows, we have broken up the application into several section
 * A component that contains a header a list of three items (red)
 * A component that represents a list items (dark red)
 
+### Step 2: Creating the individual React Components
+
+To start off, we will create a React Component that represents an individual list item. For now, we will 
+return a <li> tag with a test string, but later on we will replace it with an attribute passed from the 
+component's properties.
+
+```javascript
+function ListItem(props){
+    return <li>Test String</li>
+}
+```
+We can test the component by rendering it to the page, be sure to add a root div in the HTML page:
+
+```html
+<div id="root"> </div>
+```
+
+```javascript
+ReactDOM.render(
+    <ListItem/>,
+    document.getElementById("root")
+)
+```
