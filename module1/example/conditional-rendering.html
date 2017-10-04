@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+</head>
+<body>
+
+    <div id="root"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <script type="text/babel">
+    
+
+        //Conditional rendering      
+        function Feature(props){
+        
+        	if(props.active)
+        		return <h1>This feature is active</h1>
+        	else
+        		return <h1>This feature is NOT active</h1>
+        }
+        
+        function Feature2(props){
+
+        	return <h1>This other feature is {props.active? "active" : "not active"}</h1>
+        }
+        
+        
+        ReactDOM.render(
+        	<Feature active = "true" />,
+        	document.getElementById("root")
+        )
+        
+        ReactDOM.render(
+        	<Feature2 active = "true" />,
+        	document.getElementById("div2")
+        )
+
+
+    </script>
+
+</body>
+</html>

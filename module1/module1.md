@@ -674,3 +674,43 @@ Compare that to just defining all the UI in one Functional Component.
         document.getElementById("root")
     )
 ```
+
+---
+
+#### Module 1 | JSX and React Components   Composition   Composition Video
+
+# 
+
+---
+
+#### Module 1 | JSX and React Components   Conditional Rendering   Conditional Rendering
+
+# Conditional Rendering
+
+Conditional Rendering
+
+The output of a Functional Component can be determined based on its properties.
+
+For example:
+
+```javascript
+function Feature(props){
+    if (props.active == true){
+        return <h1>This feature is active</h1>
+    }
+    else{
+        return <h1>This feature is not active</h1>
+    }
+
+}
+```
+This can also be accomplished using an inline conditional operator:
+
+```javascript
+function Feature(props){
+    return <h1>This feature is {props.active? "active" : "not active"}</h1>
+}
+```
+
+
+
