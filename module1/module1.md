@@ -712,5 +712,32 @@ function Feature(props){
 }
 ```
 
+Preventing Rendering
 
+The output of a Functional Component can be prevented from rendering.
 
+```javascript
+function Feature(props){
+    if(props.active!){
+        return null
+    }
+    else{
+        return <h1>{props.message}</h1>
+    }
+}
+```
+
+You can also conditionally prevent a feature from rendering using the && operator:
+
+```javascript
+function Feature(props){
+    return (
+        props.active && <h1>{props.message}</h1>
+    )
+}
+```
+With the && operator, true and expression will always evaluate to expression. On the other hand, false and expression will always evaluate to false which won't render.
+
+---
+
+#### Module 1 | JSX and React Components   Conditional Rendering   Conditional Rendering Video

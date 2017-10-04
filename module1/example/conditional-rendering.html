@@ -28,7 +28,21 @@
 
         	return <h1>This other feature is {props.active? "active" : "not active"}</h1>
         }
+
+        //Preventing Rendering
+        function Feature3(props){
+            if(props.active)
+                return <h1>{props.message}</h1>
+            else
+               return null 
+            
+        }
         
+        function Feature4(props){
+            return (
+                props.active && <h1>This should be render: {props.message}</h1>    
+            )
+        }
         
         ReactDOM.render(
         	<Feature active = "true" />,
@@ -40,6 +54,15 @@
         	document.getElementById("div2")
         )
 
+        ReactDOM.render(
+        	<Feature3 active = "true" message = "This feature should not be prevented from rendering"/>,
+        	document.getElementById("div3")
+        )
+        
+        ReactDOM.render(
+        	<Feature4 active = "true" message = "my message"/>,
+        	document.getElementById("div4")
+        )
 
     </script>
 
