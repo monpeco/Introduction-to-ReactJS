@@ -19,27 +19,53 @@
             )
         }
         
-        function Shoppingparagraph(props){
+        function ShoppingItem(props){
+            return <option value = {props.item}>{props.item}</option>
 
-            if(props.withCheck == "true")
+        }
+        
+        function ShoppingSelection(props){
+            return(
+            <select>
+                <ShoppingItem item = "All"/>
+                <ShoppingItem item = "Cars"/>
+                <ShoppingItem item = "Trucks"/>
+                <ShoppingItem item = "Convertibles"/>
+            </select>
+            )
+        }
+        
+        function ShoppingParagraph(props){
+
+            if(props.withCheck == "true"){
             return (
                 <div>
                     {props.text}
                     <input type="checkbox" id="coding" name="interest" value="coding" checked/>
                 </div>
             )
-            else
+            }else if(props.withSelection == "true"){
+                return (
+                <div>
+                    {props.text}
+                    <ShoppingSelection items = {["Akk"]}/>
+                </div> 
+                )
+            }
+            else{
                 return <p>{props.text}</p>
+            }
         }
         
         function ShoppingApp(props){
             return(
                 <div>
                     <ShoppingTitle title = "Welcome to React Transportation" />
-                    <Shoppingparagraph text = "The best place to buy vehicles online" />
+                    <ShoppingParagraph text = "The best place to buy vehicles online" />
                     
                     <ShoppingTitle title = "Choose Options"/>
-                    <Shoppingparagraph  text = "New Only" withCheck = "true"/>
+                    <ShoppingParagraph  text = "New Only" withCheck = "true"/>
+                    <ShoppingParagraph  text = "Select Type" withSelection = "true" items = {["All","Cars","Trucks","Convertibles"]}/>
                 </div>
             )
         }
