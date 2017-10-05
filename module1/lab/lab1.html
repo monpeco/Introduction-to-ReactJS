@@ -12,18 +12,34 @@
 
 
     <script type="text/babel">
-    
+
         function ShoppingTitle(props){
             return(
                 <h2>{props.title}</h2>
             )
         }
         
+        function Shoppingparagraph(props){
+
+            if(props.withCheck == "true")
+            return (
+                <div>
+                    {props.text}
+                    <input type="checkbox" id="coding" name="interest" value="coding" checked/>
+                </div>
+            )
+            else
+                return <p>{props.text}</p>
+        }
+        
         function ShoppingApp(props){
             return(
                 <div>
-                    <ShoppingTitle title = "Welcome to React Transportation" legend = "The best place to buy vehicles online"/>
+                    <ShoppingTitle title = "Welcome to React Transportation" />
+                    <Shoppingparagraph text = "The best place to buy vehicles online" />
+                    
                     <ShoppingTitle title = "Choose Options"/>
+                    <Shoppingparagraph  text = "New Only" withCheck = "true"/>
                 </div>
             )
         }
