@@ -8,22 +8,20 @@
 </head>
 <body>
 
-    <div id="body"></div>
     <div id="root"></div>
-    <div id="foot"></div>
 
 
     <script type="text/babel">
     
         function ListItem(props){
-            return <li>Test String</li>
+            return <li>{props.item}</li>
         }
         
         function ShoppingTitle(props){
             return(
                 <div>
-                    <h1>Test Title</h1>
-                    <h2>Test Description</h2>
+                    <h1>{props.title}</h1>
+                    <h2>The number of Items is {props.numItems}</h2>
                 </div>
                 )
         }
@@ -31,11 +29,11 @@
         function ShoppingList(props){
             return(
                 <div>
-                    <h3>Test Header</h3>
+                    <h3>{props.header}</h3>
                         <ol>
-                            <ListItem/>
-                            <ListItem/>
-                            <ListItem/>
+                            <ListItem item = {props.items[0]}/>
+                            <ListItem item = {props.items[1]}/>
+                            <ListItem item = {props.items[2]}/>
                         </ol>
                 </div>
             )
@@ -44,10 +42,10 @@
         function ShoppingApp(props){
             return(
                 <div>
-                    <ShoppingTitle/>
-                    <ListItem/>
-                    <ListItem/>
-                    <ListItem/>
+                    <ShoppingTitle title = "My Shopping List" numItems = "9"/>
+                    <ShoppingList header = "Foods" items = {["Apple","Bread","Cheese"]}/>
+                    <ShoppingList header = "Clothes" items = {["Shirt","Pants","Hat"]}/>
+                    <ShoppingList header = "Supplies" items = {["Pen","Paper","Glue"]}/>
                 </div>
             )
         }

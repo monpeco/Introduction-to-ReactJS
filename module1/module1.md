@@ -881,10 +881,85 @@ ReactDOM.render(
 )
 ```
 
+### Step 4: Adding in the application data
+
+Now that we have our entire application modeled using React Components, we can now replace our 
+test strings with the actual application data.
+
+```javascript
+function ShoppingApp(props){
+
+    return (
+        <div>
+            <ShoppingTitle title = "My Shopping List" numItems = "9"/>
+            <ShoppingList header = "Food" items = {[ "Apple","Bread","Cheese"]}/>
+            <ShoppingList header = "Clothes" items = {[ "Shirt","Pants","Hat"]}/>
+            <ShoppingList header = "Supplies" items = {[ "Pen","Paper","Glue"]}/>
+        </div>
+    )
+}
+``` 
+
+In the `ShoppingApp` component, I have added several attributes that contain the application data. I have 
+supplied an array of strings to the items attribute of the `ShoppingList` component. The items in the array 
+will be passed down to the individual `ListItem` components within the ShoppingList component. The numItems 
+attribute on the ShoppingTitle component represents the number of total items in all of the shopping lists. 
+This value will be included in the second header of the `ShoppingApp` component.
+
+Now we must edit the `ShoppingList` component to make use of the supplied data. The shopping list headers 
+can be accessed through `props.header` and the shopping items can be accessed from their indices from the 
+`props.items` array.
 
 
+```javascript
+function ShoppingList(props){
+    return (
+        <div>
+            <h3>{props.header}</h3>
+            <ol>
+                <ListItem item = {props.items[0]}/>
+                <ListItem item = {props.items[1]}/>
+                <ListItem item = {props.items[2]}/>
+            </ol>
+        </div>
+    )
+}
+```
 
+Next, we must edit the ShoppingTitle component to make use of the supplied data. The 
+title and number of items can be accessed through props.title and props.numItems 
+respectively.
 
+```javascript
+function ShoppingTitle(props){
+    return (
+        <div>
+            <h1>{props.title}</h1>
+            <h2>Total Number of Items: {props.numItems}</h2>
+        </div>
 
+    ) 
+}
+```
 
+Lastly, we must edit the ListItem component to make use of the supplied data. The 
+item name can be accessed through the props.item.
 
+```javascript
+function ListItem(props){
+    return <li>{props.item}</li>
+}
+```
+Now that we have completed all of the steps, we can test our entire application 
+by rendering it to the page:
+
+```javascript
+ReactDOM.render(
+    <ShoppingApp/>,
+    document.getElementById("root")
+)
+```
+
+---
+
+#### Module 1 | JSX and React Components   Module 1 Lab   Module 1 Lab
