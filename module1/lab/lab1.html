@@ -57,6 +57,37 @@
             }
         }
         
+        function ShoppingSectionHeader(props){
+            return(
+                <th>{props.item}</th>
+            )
+        }
+                
+        function ShoppingSectionData(props){
+            return(
+                <td>{props.item}</td>
+            )
+        }
+        
+        function ShoppingSection(props){
+            return(
+                <ul>
+                    <tr>
+                        <ShoppingSectionHeader item = {props.header[0]}/>
+                        <ShoppingSectionHeader item = {props.header[1]}/>
+                        <ShoppingSectionHeader item = {props.header[2]}/>
+                        <ShoppingSectionHeader item = {props.header[3]}/>
+                    </tr>
+                    <tr>
+                        <ShoppingSectionData item = {props.data[0]}/>
+                        <ShoppingSectionData item = {props.data[1]}/>
+                        <ShoppingSectionData item = {props.data[2]}/>
+                        <ShoppingSectionData item = {props.data[3]}/>
+                    </tr>
+                </ul>
+            )
+        }
+        
         function ShoppingApp(props){
             return(
                 <div>
@@ -66,6 +97,9 @@
                     <ShoppingTitle title = "Choose Options"/>
                     <ShoppingParagraph  text = "New Only" withCheck = "true"/>
                     <ShoppingParagraph  text = "Select Type" withSelection = "true" items = {["All","Cars","Trucks","Convertibles"]}/>
+                    
+                    <ShoppingTitle title = "Cars" />
+                    <ShoppingSection header = {["Year","Model","Price","Buy"]} data = {["2013","A","$32000","Buy Now"]}/>
                 </div>
             )
         }
