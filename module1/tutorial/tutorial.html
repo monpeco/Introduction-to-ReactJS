@@ -40,21 +40,23 @@
                 </div>
             )
         }
+        
+        function ShoppingApp(props){
+            return(
+                <div>
+                    <ShoppingTitle/>
+                    <ListItem/>
+                    <ListItem/>
+                    <ListItem/>
+                </div>
+            )
+        }
 
         ReactDOM.render(
-            <ListItem/>,
+            <ShoppingApp/>,
             document.getElementById("root")
         )
         
-        ReactDOM.render(
-            <ShoppingTitle/>,
-            document.getElementById("body")
-        )
-        
-        ReactDOM.render(
-            <ShoppingList/>,
-            document.getElementById("foot")
-        )
         
     </script>
 

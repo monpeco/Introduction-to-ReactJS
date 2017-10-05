@@ -851,3 +851,40 @@ ReactDOM.render(
     document.getElementById("root")
 )
 ```
+
+### Step 3: Putting the components together
+
+Now that we have created and tested the individual React Components, we will now encompass them 
+under one React Component. The `ShoppingApp` component will contain the `ShoppingTitle` component and 
+three `ShoppingList` components.
+
+```javascript
+function ShoppingApp(props){
+
+    return (
+        <div>
+            <ShoppingTitle/>
+            <ShoppingList/>
+            <ShoppingList/>
+            <ShoppingList/>
+        </div>
+    )
+}
+```
+
+We can test the application by rendering it to the page:
+
+```javascript
+ReactDOM.render(
+    <ShoppingApp/>,
+    document.getElementById("root")
+)
+```
+
+
+
+
+
+
+
+
