@@ -822,7 +822,32 @@ ReactDOM.render(
 )
 ```
 
+Lastly, we will create the component that contains a header and three ListItem components. For now, 
+we will return a <h3> tag with a test string, but later on we will replace it with an attribute passed 
+from the component's properties. We must wrap the headers with <div> tag to ensure that there is one 
+element that encompasses all of the returned React Elements. In addition, we must surround the 
+returned value with parenthesis since the return value spans several lines.
 
+```javascript
+function ShoppingList(props){
+    return (
+        <div>
+            <h3>Test Header</h3>
+            <ol>
+                <ListItem/>
+                <ListItem/>
+                <ListItem/>
+            </ol>
+        </div>
+    )
+}
+```
 
+We can test the component by rendering it to the page:
 
-
+```javascript
+ReactDOM.render(
+    <ShoppingList/>,
+    document.getElementById("root")
+)
+```
