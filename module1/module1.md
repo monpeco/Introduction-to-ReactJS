@@ -794,3 +794,35 @@ ReactDOM.render(
     document.getElementById("root")
 )
 ```
+
+Next will create a React Component that contains the application's title and description. For now, 
+we will return <h1> and <h2> tags that contain test strings, but later on we will replace them with 
+attributes passed from the component's properties. We must wrap the headers with <div> tag to ensure 
+that there is one element that encompasses all of the returned React Elements. In addition, we must 
+surround the returned value with parenthesis since the return value spans several lines.
+
+```javascript
+function ShoppingTitle(props){
+    return (
+        <div>
+            <h1>Test Title</h1>
+            <h2>Test Description</h2>
+        </div>
+
+    ) 
+}
+```
+
+We can test the component by rendering it to the page:
+
+```javascript
+ReactDOM.render(
+    <ShoppingTitle/>,
+    document.getElementById("root")
+)
+```
+
+
+
+
+

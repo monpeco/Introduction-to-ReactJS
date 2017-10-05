@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <div id="body"></div>
     <div id="root"></div>
 
     <script type="text/babel">
@@ -15,10 +16,24 @@
         function ListItem(props){
             return <li>Test String</li>
         }
+        
+        function ShoppingTitle(props){
+            return(
+                <div>
+                    <h3>Test Title</h3>
+                    <h4>Test Description</h4>
+                </div>
+                )
+        }
 
         ReactDOM.render(
             <ListItem/>,
             document.getElementById("root")
+        )
+        
+        ReactDOM.render(
+            <ShoppingTitle/>,
+            document.getElementById("body")
         )
         
     </script>
