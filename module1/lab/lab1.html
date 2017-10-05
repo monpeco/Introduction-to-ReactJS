@@ -27,10 +27,10 @@
         function ShoppingSelection(props){
             return(
             <select>
-                <ShoppingItem item = "All"/>
-                <ShoppingItem item = "Cars"/>
-                <ShoppingItem item = "Trucks"/>
-                <ShoppingItem item = "Convertibles"/>
+                <ShoppingItem item = {props.items[0]}/>
+                <ShoppingItem item = {props.items[1]}/>
+                <ShoppingItem item = {props.items[2]}/>
+                <ShoppingItem item = {props.items[3]}/>
             </select>
             )
         }
@@ -48,7 +48,7 @@
                 return (
                 <div>
                     {props.text}
-                    <ShoppingSelection items = {["Akk"]}/>
+                    <ShoppingSelection items = {["All","Cars","Trucks","Convertibles"]}/>
                 </div> 
                 )
             }
