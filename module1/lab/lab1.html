@@ -12,7 +12,9 @@
 
 
     <script type="text/babel">
-
+        
+        var DefaulHeader = ["Year","Model","Price","Buy"];
+        
         function ShoppingTitle(props){
             return(
                 <h2>{props.title}</h2>
@@ -73,10 +75,10 @@
             return(
                 <ul>
                     <tr>
-                        <ShoppingSectionHeader item = {props.header[0]}/>
-                        <ShoppingSectionHeader item = {props.header[1]}/>
-                        <ShoppingSectionHeader item = {props.header[2]}/>
-                        <ShoppingSectionHeader item = {props.header[3]}/>
+                        <ShoppingSectionHeader item = {DefaulHeader[0]}/>
+                        <ShoppingSectionHeader item = {DefaulHeader[1]}/>
+                        <ShoppingSectionHeader item = {DefaulHeader[2]}/>
+                        <ShoppingSectionHeader item = {DefaulHeader[3]}/>
                     </tr>
                     <tr>
                         <ShoppingSectionData item = {props.data[0]}/>
@@ -99,7 +101,8 @@
                     <ShoppingParagraph  text = "Select Type" withSelection = "true" items = {["All","Cars","Trucks","Convertibles"]}/>
                     
                     <ShoppingTitle title = "Cars" />
-                    <ShoppingSection header = {["Year","Model","Price","Buy"]} data = {["2013","A","$32000","Buy Now"]}/>
+                    <ShoppingSection  data = {["2013","A","$32000","Buy Now"]}/>
+
                 </div>
             )
         }
