@@ -71,6 +71,12 @@
             )
         }
         
+        function ShoppingSectionButton(props){
+            return(
+                <td><button>{props.item}</button></td>
+            )
+        }
+        
         function ShoppingSection(props){
             return(
                 <ul>
@@ -84,7 +90,7 @@
                         <ShoppingSectionData item = {props.data[0]}/>
                         <ShoppingSectionData item = {props.data[1]}/>
                         <ShoppingSectionData item = {props.data[2]}/>
-                        <ShoppingSectionData item = {props.data[3]}/>
+                        <ShoppingSectionButton item = {props.data[3]}/>
                     </tr>
                 </ul>
             )
