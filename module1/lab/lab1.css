@@ -1,0 +1,21 @@
+th {
+  background-color: lightgrey;
+}
+
+th, td {
+  border: 1px solid grey;
+  width: 220px;
+  padding: 5px;
+}
+
+td {
+  padding: 10px;
+}
+
+input[type="checkbox"]{
+  width: 50px;
+}
+
+select{
+  margin: 10px;
+}
