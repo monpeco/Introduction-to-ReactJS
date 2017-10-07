@@ -88,3 +88,31 @@ You can supply property values the same way as you supply attribute values:
 ```javascript
 <Welcome message="Hello World!"/>
 ```
+
+---
+
+#### Module 2 | State, Life Cycle, and Event Handlers   Class Components   Class Components Video
+
+# Class Components Video
+
+https://youtu.be/jXeaQaWwufo
+
+> In addition to being written as a function, React component can also
+> be written using ES6 classes. These are called class components, the
+> difference between a class component and a React functional component
+> is that class components can have state and life cycle methods. Let's
+> take a look at these two React components, they output the same thing,
+> but one is written as a class component, while the other one is a
+> functional component. So if we take a look at the class component, we
+> will notice this render method. The render of a class component is
+> used to describe what kind of React element the class will output. Now
+> what if we wanna add a property to this class components? Well, we can
+> do it in a similar way to how we did with functional components. So
+> first we describe the property by naming it, so if we have a property
+> called message and we set that equal to class component, we can then
+> address it by referencing this.props.message. And there we have it,
+> class component is now rendered to the page. And one thing to remember
+> is that you have to do this.props.message whereas before with
+> functional components you only had to do props.message.
+
+#### Module 2 | State, Life Cycle, and Event Handlers   State   State
