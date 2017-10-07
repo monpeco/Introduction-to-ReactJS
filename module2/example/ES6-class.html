@@ -19,10 +19,16 @@
                 return <h1>Hello World!</h1>
             }
         }
+        
+        class Welcome2 extends React.Component{
+            render(){
+                return <h1>Message: {this.props.message}</h1>
+            }
+        }
 
         
         ReactDOM.render(
-            <Welcome/>,
+            <Welcome2 message = "Hello World"/>,
             document.getElementById("root")
         )
         
