@@ -2,7 +2,16 @@
 
 # Module 2 Intro Video
 
-Missing video
+https://youtu.be/sbJTI9NEcF8
+
+> Welcome to module 2. Module 2 is about class components, state, life
+> cycle methods, and event handlers. In this module, we're gonna talk
+> about how to create a class component, how to set its initial state
+> and then update it. And then we're gonna talk about the life cycle
+> methods that a class component will go through. Moving forward, we're
+> gonna talk about how do add event handlers to class components. And
+> then lastly we're gonna talk about how to make class components update
+> the state of other class components.
 
 ---
 
