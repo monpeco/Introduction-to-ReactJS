@@ -116,3 +116,46 @@ https://youtu.be/jXeaQaWwufo
 > functional components you only had to do props.message.
 
 #### Module 2 | State, Life Cycle, and Event Handlers   State   State
+
+# Constructor(props)
+
+The `constructor()` method is called before a React Component is mounted and is used to set up the initial state of the component. 
+It is important to call `super(props)` at the beginning of the `constructor()` method or else the `this.props` attribute may not 
+work correctly. The first argument to the `constructor()` method represents the properties that are passed into the component.
+
+```javascript
+class Counter extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    render(){
+        return <div>Hello World!</div>
+    }
+}
+```
+
+# Adding an initial state to Class Components
+
+The initial state of a Class Component can be declared within the `constructor()` method. The state of the 
+component must be declared as an object with attributes.
+
+```javascript
+class Counter extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {foo:123,bar:456}
+    }
+    render(){
+        return <div>foo:{this.state.foo} bar:{this.state.bar}</div>
+    }
+}
+```
+
+
+
+
+
+
+
+
+
