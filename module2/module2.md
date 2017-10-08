@@ -162,7 +162,20 @@ class Counter extends React.Component{
 }
 ```
 
+### Updating state
 
+The `setState(updater,[callback])` method is used to update the state of the component. It takes in an updater 
+object and updates the component state by shallowly merging the updater object's attributes with the previous 
+component state. The method updates the state asynchronously, so a there is an option callback that will be 
+called once the state has finished updating completely. In order to use the `setState() method`, it must be 
+referenced by calling `this.setState()`.
+
+The `setState` method will trigger the updating phase of the component lifecycle to start. This will cause the 
+component to rerender unless the `shouldComponentUpdate()` function returns false.
+
+```javascript
+this.setState({message:"new message"})
+```
 
 
 
