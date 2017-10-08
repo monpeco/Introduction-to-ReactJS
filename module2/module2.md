@@ -13,6 +13,8 @@ https://youtu.be/sbJTI9NEcF8
 > then lastly we're gonna talk about how to make class components update
 > the state of other class components.
 
+Tags: `class components`, `state`, `life cycle methods`, `event handlers`
+
 ---
 
 #### Module 2 | State, Life Cycle, and Event Handlers   Class Components   Class Components
@@ -23,6 +25,8 @@ In addition to being written as a function, React Components can also be written
 **Class Components** differ from **Functional Components** because they allow React Components to have 
 **life cycle methods** and **state**. Class components have two instance properties, `this.state` 
 and `this.props`, that represent the component's state and properties respectively.
+
+**Class Components have 2 instance properties: this.state and this.props**
 
 React Component written using ES6 classes:
 ```javascript
@@ -115,9 +119,16 @@ https://youtu.be/jXeaQaWwufo
 > is that you have to do this.props.message whereas before with
 > functional components you only had to do props.message.
 
+Tags: `ES6 classes`, `Class Component`, `render`, `properties`, `this.props.message`
+
+**The difference between a class component and a functional component is that class components 
+can have state and life cycle methods**
+
 #### Module 2 | State, Life Cycle, and Event Handlers   State   State
 
-# Constructor(props)
+# State
+
+### Constructor(props)
 
 The `constructor()` method is called before a React Component is mounted and is used to set up the initial state of the component. 
 It is important to call `super(props)` at the beginning of the `constructor()` method or else the `this.props` attribute may not 
