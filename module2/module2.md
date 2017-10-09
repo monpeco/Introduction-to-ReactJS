@@ -177,9 +177,35 @@ component to rerender unless the `shouldComponentUpdate()` function returns fals
 this.setState({message:"new message"})
 ```
 
+### Updating state based on previous state
 
+The `setState()` method does not immediately update the state of the component, it just puts the update in a 
+queue to be processed later. React may batch multiple update requests together to make rendering more efficient. 
+Due to this, special precautions must be made when you try to update the state based on the component's 
+previous state. Due to this, precautions must be made when updating the state based on previous state values.
 
+For example, the following code will only increment the state value attribute by 1 even though it was called 4 
+times:
 
+```javascript
+class Counter extends React.Component{
+    constructor(props){
+        super(props)
+        //initial state set up
+        this.state = {value:0}
+    }
+    componentDidMount(){
+        //updating state
+        this.setState({value:this.state.value+1})
+        this.setState({value:this.state.value+1})
+        this.setState({value:this.state.value+1})
+        this.setState({value:this.state.value+1})
+    }
+    render(){
+        return <div>Message:{this.state.message}</div>
+    }
+}
+```
 
 
 

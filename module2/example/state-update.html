@@ -18,13 +18,16 @@
             constructor(props){
                 super(props)
                 //initial state
-                this.state = {foo:123, bar:456}
+                this.state = {value:0}
             }
             componentDidMount(){
-                this.setState({message: "New Message"})
+                this.setState({value:this.state.value+1})
+                this.setState({value:this.state.value+1})
+                this.setState({value:this.state.value+1})
+                this.setState({value:this.state.value+1})
             }
             render(){
-                return <div>Message:{this.state.message}</div>
+                return <div>Message:{this.state.value}</div>
             }
         }
 
