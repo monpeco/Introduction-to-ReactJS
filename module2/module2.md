@@ -407,4 +407,28 @@ https://youtu.be/W7rAGd1XBH4
 
 ---
 
-#### 
+#### Module 2 | State, Life Cycle, and Event Handlers   Event Handlers   Event Handlers
+
+# Adding Event Handlers
+
+Handling events in React is similar to handling events in HTML. To attach an event handler to a React Element, assign the event 
+handler method to the appropriate event attribute.
+
+Here are the main differences:
+
+* One main difference in React is that **you can use JSX brackets to specify the event handler function** instead of declaring it as a string.
+
+* The next difference is that **React events are named using camelCase** instead of being all lowercase. For example, `onclick` and `onkeypress` in HTML become `onClick` and `onKeyPress` in React respectively.
+
+Click event in **React**:
+
+```javascript
+<button onClick = {clickHandler} >Click Me</button>
+```
+
+Click event in HTML:
+
+```html
+<button onclick = "clickHandler()" >Click Me</button>
+```
+
