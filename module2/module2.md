@@ -207,5 +207,34 @@ class Counter extends React.Component{
 }
 ```
 
+The `setState(updater,[callback])` method can take in an updater function as its first argument to update the 
+state based on the previous state and properties. The return value of the updater function will be shallowly 
+merged with the previous component state. The method updates the state asynchronously, so a there is an option 
+callback that will be called once the state has finished updating completely.
 
+Example:
+```javascript
+this.setState((prevState, props) => {
+    return {attribute: "value"}
+})
+```
 
+Here is an example of how to update the state based on previous state:
+
+```javascript
+class Counter extends React.Component{
+    constructor(props){
+        super(props)
+        //initial state set up
+        this.state = {message:"initial message"}
+    }
+    componentDidMount()
+        //updating state
+        this.setState((prevState, props) => {
+            return {message: prevState.message + '!'}
+        })
+    }
+    render(){
+        return <div>Message:{this.state.message}</div>
+    }
+```
