@@ -260,7 +260,7 @@ this.setState({count:42}, () = {
     //outputs 42
 })
 ```
-State is not mutable
+### State is not mutable
 
 State is read only so you should not try to manually change the values of the state attributes. If the state needs to be updated, the setState() method is the only way to change the state.
 
@@ -274,3 +274,68 @@ this.state.message = "new message"
 ---
 
 #### Module 2 | State, Life Cycle, and Event Handlers   State   State Video
+
+State Video
+
+https://youtu.be/BY_DhPf4_0E
+
+> The constructor method is called right before a component is mounted
+> and is used to setup the initial state of the components. If we look
+> at our constructor method in our class components we can see it has a
+> props argument and super props is called right at the beginning. It is
+> important to always do this steps If you do not do these steps, and
+> you try to reference a property of the class components, the
+> properties will not render correctly. So if you're gonna use
+> properties, you must provide props as an argument, and the do super
+> props. So after calling super props we can now set our initial state.
+> So the initial state is set by setting the, this.state value to equal
+> an object and then you can provide this object with the values you
+> want your state to have. So let's have a value attribute and set it to
+> zero. Now we can reference the value attribute by typing
+> this.state.value. And now we can see that this is rendered to the
+> page. So what if we wanna update the state? Well, we have this other
+> method called component in mount and this is called immediately after
+> the constructor method is called. So we're just using this as an
+> example of updating the state sometime in the future. So to update the
+> state, we have this method called this dot set state. And this dot set
+> state takes in an object and does a shallow merge of that object with
+> the pre-existing state. So let's merge it with an object that says
+> value and the value will be this.state.valueplus 1. So this will
+> basically increment the previous states value attribute by one. And as
+> you can see, it was rendered and is now 1. So one thing to note is
+> that setState does not happen immediately. It is actually asynchronous
+> and you can't really determine when it's gonna finish. So if you do
+> something like console.log this.state.value immediately below, it
+> might now work the way you expect. You would expect it log 1 because
+> we just incremented the state. However, if we look at the console, we
+> could see that it is 0. This is because after we called the
+> this.setState and then we reached the console.log the value may not
+> have been incremented yet since setState was asynchronous. Now if they
+> want to do like this and do something with the future value of a state
+> we can use the call back method that is the second argument of the
+> setState function, so let's do something here. So let's make a
+> callback that does the same thing. It logs the save value. As we can
+> see here, it logged 1 to the console. Because the value was
+> incremented and then the callback was called and then it logged new
+> value of the states. So if you ever want to do something with a future
+> value, you have to do it in the callback. Now another thing to note is
+> that if you wanted to do something with a previous state value and
+> then you have to do it in a special way. For example, if we want to
+> increment the state four times, we would expect this to work, but it
+> actually doesn't. And as you can see the page still displays one even
+> though we incremented it at four times. If we want to If you want to
+> update the state based on a previous state value we have to do it a
+> bit differently. So we can do it like this, we can provide another
+> call back as the first argument and it will have the previous state
+> and the props as arguments to this call back. And then we can return
+> an object that will be shallowly merged with the previous existing
+> state. So if we do, and then we can provide it a new value. So over
+> here we merged it with the prevState.value + 1. Now if we call this
+> multiple times. It will actually work. And as you can see the page now
+> renders four. Now, the last thing to know when updating state is to
+> never mutate the state directly. That means do not try to set
+> this.state.value to equal some new value, it just won't work.
+
+---
+
+#### 
