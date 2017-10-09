@@ -238,3 +238,39 @@ class Counter extends React.Component{
         return <div>Message:{this.state.message}</div>
     }
 ```
+
+### Using future state values
+
+Since state updates asynchronously, you can not just expect the state values to update immediately after a 
+`setState()` method call.
+
+For example, the console log may not output the updated state:
+```javascript
+//this.state.count is originally 0
+this.setState({count:42})
+console.log(this.state.count)
+//outputs 0 still
+```
+In order to use a state after it has been updated, do all logic in the callback argument:
+
+```javascript
+//this.state.count is originally 0
+this.setState({count:42}, () = {
+    console.log(this.state.count)
+    //outputs 42
+})
+```
+State is not mutable
+
+State is read only so you should not try to manually change the values of the state attributes. If the state needs to be updated, the setState() method is the only way to change the state.
+
+For example, don't do this:
+
+```javascript
+//incorrect, state should not be mutated directly
+this.state.message = "new message"
+```
+
+---
+
+#### Module 2 | State, Life Cycle, and Event Handlers   State   State Video
