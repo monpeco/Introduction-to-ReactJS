@@ -378,3 +378,33 @@ made such as cancelling timers or network requests.
 ---
 
 #### Module 2 | State, Life Cycle, and Event Handlers   Life Cycle Methods   Life Cycle Methods Video
+
+# Life Cycle Methods Video
+
+https://youtu.be/W7rAGd1XBH4
+
+> Each class component goes through a component life cycle with multiple
+> phases. There are several life cycle methods that can be overwritten
+> to run code at different parts of the life cycle. The first phase is
+> the mounting phase. The mounting phase begins when an instance of a
+> component is created and rendered to the DOM. The following life cycle
+> methods happen in the order I'm going to mention. The first is the
+> constructor, and this is called when the component is first initiated
+> and it's only called once. The next one is componentWillMount. After
+> that is the render method, where the component is actually rendered to
+> the page. And after that is componentDidMount which happens
+> immediately after the render method. The next phase is the updating
+> phase. The updating phase occurs when a component state changes and
+> the component has to read the render itself. The first life cycle
+> method that occurs is componentsWillReceiveProps. After that there is
+> the shouldComponentUpdate life cycle method. After that is the
+> componentWillUpdate. And after that is the render method where the
+> component is actually re-rendered. And lastly, there is the component
+> did update, which happens immediately after it has been rendered. The
+> last phase is the unmounting phase which occurs when a component is
+> being unmounted from the DOM. And there's only one life cycle method
+> they are called componentWillUnmount.
+
+---
+
+#### 
