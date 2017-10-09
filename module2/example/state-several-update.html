@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    
+</head>
+<body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+        
+        class Counter extends React.Component{
+            constructor(props){
+                super(props)
+                //initial state
+                this.state = {value: 0}
+            }
+            
+            componentDidMount(){
+                this.setState(function(prevState, props){
+                    return {value: prevState.value + 1}
+                })
+
+                this.setState(function(prevState, props){
+                    return {value: prevState.value + 1}
+                })
+                
+                this.setState(function(prevState, props){
+                    return {value: prevState.value + 1}
+                })
+            }
+            
+            render(){
+                return <div>value:{this.state.value}</div>
+            }
+        }
+
+        
+        ReactDOM.render(
+            <Counter value = "Hello World"/>,
+            document.getElementById("root")
+        )
+        
+    </script>
+
+</body>
+</html>
