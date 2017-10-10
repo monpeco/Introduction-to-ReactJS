@@ -485,3 +485,38 @@ Fat arrow example:
 ---
 
 #### Module 2 | State, Life Cycle, and Event Handlers   Event Handlers   Event Handlers Video
+
+# Event Handlers Video
+
+https://youtu.be/Z2fI-5qyRtA
+
+> Hello, in this example, we're going to be creating a button, and when
+> we click that button, the value inside that button is going to
+> increment by one. This is to show you how to tie event handlers to
+> your React components. So let's start. So first, we're going to define
+> our class component, and let's call it counter. And it's going to
+> extend React.component. And next we're going to define our render
+> method. And we're going to return, button. And inside that button
+> let's do the state value and then have a count attribute that keeps
+> track of how many times this button has been pressed. So, next, let's
+> define our constructor. And let's put in the props and then do
+> super(props). So now let's set our initial state. So in our initial
+> state, the count is gonna be zero. So this.state = {count: 0}. Next,
+> let's make an event handler called clickHandler. And inside this event
+> handler we're going to increment that state count attribute by 1. So
+> this.setState and provide an object to merge with a count attribute of
+> this.state.count + 1. So let's click it and see if anything works. It
+> doesn't work. Well that's because we have to do a couple more things
+> in order for this to work. First we have to bind our event handler to
+> our class component. Otherwise, the this part of this.setState won't
+> know what it's referring to. So to bind it we do this.clickHandler =
+> this.clickHandler.bind(this). This will make sure that whenever we
+> call the clickHandler wherever it may be, it will always have its this
+> referenced to the counter class component. So next we need to pass
+> this clickHandler to the button. So there's an onClick attribute and
+> we can pass in this.clickHandler. And now if we click it, it works. We
+> press the button and the button value increments by 1.
+
+---
+
+#### Module 2 | State, Life Cycle, and Event Handlers   Lifting State Up   Lifting State Up
