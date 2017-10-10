@@ -16,6 +16,11 @@
         
         //  https://reactjs.org/docs/lifting-state-up.html
         
+        const scaleNames = {
+            c: 'Celsius',
+            f: 'Fahrenheit'
+        };
+        
         function BoilingVerdict(props){
             if (props.celsius >= 100){
                 return <p>This water would boil</p>;
@@ -23,7 +28,7 @@
             return <p>This water would NOT boil</p>;
         }
         
-        class Calculator extends React.Component{
+        class TemperatureInput extends React.Component{
             constructor(props){
                 super(props);
                 this.handleChange = this.handleChange.bind(this);
@@ -36,9 +41,10 @@
             
             render(){
                 const temperature = this.state.temperature;
+                const scale = this.props.scale
                 return(
                     <fieldset>
-                        <legend>Enter a temperature in Celsius:</legend>
+                        <legend>Enter a temperature in {scaleNames[scale]}:</legend>
                         <input
                             value={temperature}
                             onChange={this.handleChange} />
@@ -48,7 +54,17 @@
                 
             }
         }
-        
+
+        class Calculator extends React.Component{
+            render(){
+                return(
+                <div>
+                    <TemperatureInput scale='c' />
+                    <TemperatureInput scale='f' />
+                </div>
+                )
+            }
+        }
         
         ReactDOM.render(
             <Calculator />,
