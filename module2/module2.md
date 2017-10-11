@@ -762,3 +762,32 @@ ReactDOM.render(
     document.getElementById('root')
 )
 ```
+
+Next, we can create a component that represents a row of grid cells. We can use a for loop to push 7 cells 
+into an array that we will insert in a <div> tag. We can add some styling to make the grid cells align horizontally.
+
+```javascript
+function Row(props){
+    var style = {
+          display: "flex"
+    }
+    var cells = []
+    for(let i = 0; i < 7; i++){
+        cells.push(<Cell/>)
+    }
+    return (
+        <div style = {style}>
+            {cells}
+        </div>
+    )
+}
+```
+
+We can test the component by rendering it to the page:
+
+```javascript
+ReactDOM.render(
+    <Row/>,
+    document.getElementById('root')
+)
+```
