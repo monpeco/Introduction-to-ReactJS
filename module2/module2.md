@@ -848,3 +848,29 @@ ReactDOM.render(
     document.getElementById('root')
 )
 ```
+
+### Step 3: Adding game state
+
+The next step is to add state to the `Game` component. The state should keep track 
+of everything the game needs to know to function.
+
+The state should keep track of the following:
+
+* Which player's turn it is (true for black, false for red)
+* Which grid cell's have pieces and what color those pieces should be (0 for empty, 1 for black, 2 for red)
+* Which player has won ( 0 for no one, 1 for black, 2 for red)
+
+The empty grid can be represented by a 2-D array. The 2-D array consists of an array 
+that has 6 indexes that each have 7 indexes.
+
+Set the initial state in the constructor.
+
+
+```javascript
+var cells = []
+for(let i = 0; i < 6; i++ ){
+    cells.push(new Array(7).fill(0))
+}
+
+this.state = {player:false, cells:cells, winner:0}
+```
