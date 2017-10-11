@@ -38,7 +38,6 @@
             const output = convert(input);
             const rounded = Math.round(output * 1000) / 1000;
             return rounded.toString();
-            
         }
 
 
@@ -53,15 +52,16 @@
             constructor(props){
                 super(props);
                 this.handleChange = this.handleChange.bind(this);
-                this.state = {temperature: ''};
             }
             
             handleChange(e){
-                this.setState({temperature: e.target.value});
+                // Before: this.setState({temperature: e.target.value});
+                this.props.onTemperatureChange(e.target.value);
             }
             
             render(){
-                const temperature = this.state.temperature;
+                // Before: const temperature = this.state.temperature;
+                const temperature = this.props.temperature;
                 const scale = this.props.scale
                 return(
                     <fieldset>
