@@ -679,3 +679,56 @@ ReactDOM.render(
   document.getElementById("root")
 )
 ```
+
+#### Module 2 | State, Life Cycle, and Event Handlers   Module 2 Tutorial   Module 2 Tutorial
+
+# Module 2 Tutorial
+
+This tutorial will teach you how to create a Connect 4 game.
+
+[Demo of Game/Solution](https://codepen.io/benjlin/pen/WOZwbV?editors=1011)
+
+### Step 1: Breaking up the application into components
+
+![Step 1](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/82487af4ed13153694e25f172134ada3/asset-v1:Microsoft+DEV281x+4T2017+type@asset+block/m2tutorial1divided.png)
+
+As the above image shows, we have broken up the application into several sections:
+
+* A component that represents a circle (lime green)
+* A component that represents a grid cell (dark red)
+* A component that represents a row of cells (teal)
+* A component that represents the game board (red)
+* A section that displays the game messages (blue)
+* A section with a restart button ( green)
+
+### Step 2: Creating the individual components
+
+To start off lets create a component that represents the circle that will be put 
+inside each grid cell. We can accomplish this by returning a `<div>` tag with 
+some styling to make it into a circle.
+
+```javascript
+function Circle(props){
+    var style = {
+        backgroundColor:"white",
+        border: "1px solid black",
+        borderRadius: "100%",
+        paddingTop: "98%"
+    }
+    return (
+       <div style = {style}></div>
+    )
+}
+```
+We can test the component by rendering it to the page, be sure to add a root div in the HTML page:
+
+```html
+<div id="root"></div>
+```
+
+```javascript
+ReactDOM.render(
+    <Circle/>,
+    document.getElementById('root')
+)
+```
