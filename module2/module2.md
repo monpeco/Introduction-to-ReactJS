@@ -874,3 +874,53 @@ for(let i = 0; i < 6; i++ ){
 
 this.state = {player:false, cells:cells, winner:0}
 ```
+
+### Step 4: Passing State down
+
+The next step is to pass down the cell states all the way down to the individual grid cells. We 
+also need to pass down a click event handler down to the grid cells. Once this is accomplished, 
+we will implement the basic functionality to change a cell circle's color when it is clicked.
+
+First, add a handleClick() method to the `Game` component:
+
+```javascript
+    handleClick(){
+        console.log("clicked")
+    }
+```
+
+Also be sure to bind handleClick to the `Game` component in the constructor:
+
+```javascript
+    this.handleClick = this.handleClick.bind(this)
+```
+
+Next, pass in the `handleClick` method and the `this.state.cells` attribute into the `Board` component. 
+Also, pass in the click event handler.
+
+```javascript
+    <Board cells = {this.state.cells} handleClick = {this.handleClick}/>
+```
+
+Next, pass in the arrays of length 7 from the `this.state.cells` 2-D array to the `Row` components. Also 
+pass in the click event handler.
+
+```javascript
+    rows.push(<Row key = {i} row = {i} cells = {props.cells[i]} handleClick = {props.handleClick}/>)
+```
+
+Next, pass in the individual cell states to the `Cell` components. Also pass in the click event handler.
+
+```javascript
+    cells.push(<Cell key = {i} cell = {props.cells[i]} row = {props.row} col = {i} handleClick = {props.handleClick}/>)
+```
+
+Next, pass in the event handler to the `onClick` attribute of the `<div>` tag in the Cell component. 
+Also pass in the cell state to the `Circle` component.
+
+```javascript
+    <div style = {style} onClick = {() => props.handleClick(props.row,props.col)}>
+        <Circle cell = {props.cell}/>
+    </div>
+```
+

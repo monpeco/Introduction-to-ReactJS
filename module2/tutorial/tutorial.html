@@ -35,8 +35,8 @@
             }
         
             return (
-                <div style = {style}>
-                    <Circle/>
+                <div style = {style} onClick={ () => props.handleClick(props.row,props.col) } >
+                    <Circle cell={props.cell}/>
                 </div>
             )
         }
@@ -47,7 +47,7 @@
             }
             var cells =[];
             for(let i = 0; i < 7; i++){
-                cells.push(<Cell/>)
+                cells.push(<Cell key={i} cell={props.cells[i]} row={props.row} col={i} handleClick={props.handleClick} />)
             }
             return(
                 <div style = {style}>
@@ -59,7 +59,7 @@
         function Board(props){
             var rows = [];
             for(let i=0; i <= 5; i++){
-                rows.push(<Row/>)
+                rows.push(<Row key={i} row={i} cells={props.cells[i]} handleClick={props.handleClick} />)
             }
             return(
                 <div>
@@ -79,12 +79,18 @@
                 }
                 this.state = {player:false, cells:cells, winner:0}
                 
+                // Bind handleClick to the `Game` component
+                this.handleClick = this.handleClick.bind(this);
+                
+            }
+            handleClick(){
+                console.log("clicked")
             }
             render(){
                 return(
                     <div>
                         <h1>Blacks Turn</h1>
-                        <Board/>
+                        <Board cells={this.state.cells} handleClick={this.handleClick} />
                         <button>Restar</button>
                     </div>
                 )
