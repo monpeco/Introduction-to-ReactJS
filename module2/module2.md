@@ -732,3 +732,33 @@ ReactDOM.render(
     document.getElementById('root')
 )
 ```
+
+Next, we can create a component that represents the grid cells that make up the 
+game board. We can add some styling to make it into a square and we can embed 
+the Circle component inside of it.
+
+```javascript
+function Cell(props){
+    var style = {
+        height:50,
+        width:50,
+        border:"1px solid black",
+        backgroundColor:"yellow"
+    }
+
+    return (
+        <div style = {style}>
+            <Circle/>
+        </div>
+    )
+}
+```
+
+We can test the component by rendering it to the page:
+
+```javascript
+ReactDOM.render(
+    <Cell/>,
+    document.getElementById('root')
+)
+```

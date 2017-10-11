@@ -25,9 +25,24 @@
                <div style = {style}></div>
             )
         }
+                
+        function Cell(props){
+            var style = {
+                height:50,
+                width:50,
+                border:"1px solid black",
+                backgroundColor:"yellow"
+            }
+        
+            return (
+                <div style = {style}>
+                    <Circle/>
+                </div>
+            )
+        }
         
         ReactDOM.render(
-            <Circle/>,
+            <Cell/>,
             document.getElementById("root")
         )
         
