@@ -791,3 +791,29 @@ ReactDOM.render(
     document.getElementById('root')
 )
 ```
+
+Next, we can create a component that represents the game board. We can use a for loop to push 6 rows into 
+an array that we will insert in a `<div>` tag.
+
+```javascript
+function Board(props){
+    var rows = []
+    for(let i = 5; i >= 0; i--){
+        rows.push(<Row/>)
+    }
+    return (
+        <div>
+            {rows}
+        </div>
+    )
+}
+```
+
+We can test the component by rendering it to the page:
+
+```javascript
+ReactDOM.render(
+    <Board/>,
+    document.getElementById('root')
+)
+```

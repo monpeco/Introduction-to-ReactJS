@@ -56,8 +56,20 @@
             )
         }
         
+        function Board(props){
+            var rows = [];
+            for(let i=0; i < 5; i++){
+                rows.push(<Row/>)
+            }
+            return(
+                <div>
+                    {rows}
+                </div>
+            )
+        }
+        
         ReactDOM.render(
-            <Row/>,
+            <Board/>,
             document.getElementById("root")
         )
         
