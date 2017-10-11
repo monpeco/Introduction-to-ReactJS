@@ -817,3 +817,34 @@ ReactDOM.render(
     document.getElementById('root')
 )
 ```
+
+Lastly, we will create a `Game` component that encompasses all of the other components. In addition to the `Board` component, 
+we will add a header for the game messages and a restart button to this component. The header and restart button are simple 
+enough that we do not need to make them into their own components. The `Game` component will hold all of the application's state 
+so we must make it a class component.
+
+```javascript
+class Game extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    render(){
+        return (
+            <div>
+                <h1>Blacks Turn</h1>
+                <Board/>
+                <button>Restart</button>
+            </div>
+        )
+    }
+}
+```
+
+We can test the component by rendering it to the page:
+
+```javascript
+ReactDOM.render(
+    <Game/>,
+    document.getElementById('root')
+)
+```

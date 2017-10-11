@@ -68,8 +68,24 @@
             )
         }
         
+        class Game extends React.Component{
+            constructor(props){
+                super(props);
+                
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>Blacks Turn</h1>
+                        <Board/>
+                        <button>Restar</button>
+                    </div>
+                )
+            }
+        }
+        
         ReactDOM.render(
-            <Board/>,
+            <Game/>,
             document.getElementById("root")
         )
         
