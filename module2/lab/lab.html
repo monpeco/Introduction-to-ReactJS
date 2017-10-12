@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    
+</head>
+<body>
+
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+                
+        // All the questions, options to the questions and the correct answer
+        var questions = [
+            ['Question number 0','Option 0','Option 1','Option 2','Option 3',0],
+            ['Question number 1','Option 0','Option 1','Option 2','Option 3',0],
+            ['Question number 2','Option 0','Option 1','Option 2','Option 3',0],
+            ['Question number 3','Option 0','Option 1','Option 2','Option 3',0],
+            ['Question number 4','Option 0','Option 1','Option 2','Option 3',0],
+            ['Question number 5','Option 0','Option 1','Option 2','Option 3',0],
+            ['Question number 6','Option 0','Option 1','Option 2','Option 3',0],
+            ['Question number 7','Option 0','Option 1','Option 2','Option 3',0],
+            ['Question number 8','Option 0','Option 1','Option 2','Option 3',0],
+            ['Question number 9','Option 0','Option 1','Option 2','Option 3',0],
+        ];
+        
+        class QuestionSection extends React.Component{
+        	constructor(props){
+        		super(props);
+        		this.state={text: this.props.text};
+        		console.log("this.props.text: " + this.props.text)
+        		//his.state = {foo:123,bar:456}
+        	}
+        	render(){
+        		return(
+        			<div>
+        				<h3>Question:</h3>
+        				<h1>{this.state.text}</h1>
+        			</div>
+        		)
+        	}
+        }
+        
+        ReactDOM.render(
+            <QuestionSection text={questions[0][0]} />,
+            document.getElementById("root")
+        )
+        
+    </script>
+
+</body>
+</html>
