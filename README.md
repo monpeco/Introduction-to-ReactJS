@@ -50,3 +50,8 @@
 
 * Final Assessment
 * Post-Course Survey
+
+
+### Other resources:
+* https://reactjs.org/docs/lifting-state-up.html (lifting state up example)
+* https://reactcheatsheet.com/
