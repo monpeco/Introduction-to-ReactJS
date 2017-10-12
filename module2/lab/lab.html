@@ -28,37 +28,56 @@
             ['Question number 9','Option 0','Option 1','Option 2','Option 3',0],
         ];
         
-        class AnswerSection extends React.Component{
+		function ScoreSection(props){
+			return(
+				<div>
+					<h1>correct: {props.correct}</h1>
+					<h1>incorrect: {props.incorrect}</h1>
+				</div>
+			)
+		}
+
+		  
+		function AnswerSection(props){
+			return(
+				<button>{props.text}</button>
+			)
+		}
+
+					
+		function QuestionSection(props){
+			return(
+				<div>
+					<h1>{props.text}</h1>
+				</div>
+			)
+		}
+
+        
+        class TriviaApplication extends React.Component{
         	constructor(props){
         		super(props);
-        		this.state={text: this.props.text};
-        		console.log("AnswerSection - this.props.text: " + this.props.text)
         	}
         	render(){
-        		return(
-					<button>{this.state.text}</button>
-        		)
-        	}
-        }
-                
-        class QuestionSection extends React.Component{
-        	constructor(props){
-        		super(props);
-        		this.state={text: this.props.text};
-        		console.log("this.props.text: " + this.props.text)
-        	}
-        	render(){
+				var answers = [];
+				for(let i=1; i<5; i++){
+					answers.push(<AnswerSection text={questions[0][i]}/>)
+				}
         		return(
         			<div>
-        				<h3>Question:</h3>
-        				<h1>{this.state.text}</h1>
+        				<QuestionSection text={questions[0][0]}/>
+        				<div>
+							{answers}
+        				</div>
+        				<ScoreSection correct={1} incorrect={2}/>
         			</div>
         		)
         	}
         }
+
         
         ReactDOM.render(
-            <AnswerSection text={questions[0][1]} />,
+            <TriviaApplication />,
             document.getElementById("root")
         )
         
