@@ -949,3 +949,37 @@ function Circle(props){
 ```
 
 If you open up the console and click a cell on the grid, you can see that "clicked" will be output to the console log.
+
+Next, modify the `handleClick` method a bit to get a more detailed idea of which cell is 
+being clicked.
+
+```javascript
+handleClick(row,col){
+	console.log("row: " + row + " | col: " + col)
+}
+```
+
+Now when a cell is clicked, the console log will display the row and column of the cell that is clicked.
+
+Now lets modify the handleClick method further to update the state of the cells when they are clicked. 
+The `slice()` method is used to generate a shallow copy of the inner arrays of the 2-D cells array. 
+These shallow copies are then used to build a new 2-D array named temp. The selected row and column 
+of the new 2-D array is modified and then the cells state is updated to equal the temp 2-D array.
+
+```javascript
+handleClick(row,col){
+	console.log("row: " + row + " | col: " + col)
+	console.log(this.state.cells)
+	var temp = [];
+	for(let i = 0; i < 6; i++){
+	  temp.push(this.state.cells[i].slice())
+	}
+	temp[row][col] = 1;
+	this.setState({cells:temp})
+}
+```
+
+If you click on a grid cell now, the corresponding grid circle will now turn black. When a grid cell is 
+clicked, it calls the `handleClick()` method which updates the cells state attribute. The state is then 
+passed down until it reaches the Circle component and the circle updates its color to reflect the cell 
+state.

@@ -89,8 +89,15 @@
                 this.handleClick = this.handleClick.bind(this);
                 
             }
-            handleClick(){
-                console.log("clicked")
+            handleClick(row, col){
+                console.log("Row: " + row + ", Col: " + col);
+                var temp = [];
+                for(let i=0; i<6; i++){
+                    temp.push(this.state.cells[i].slice())
+                }
+                temp[row][col] = 1;
+                this.setState({cells: temp}, () => { console.log(this.state.cells); } )
+                
             }
             render(){
                 return(
