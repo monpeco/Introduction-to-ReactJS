@@ -924,3 +924,28 @@ Also pass in the cell state to the `Circle` component.
     </div>
 ```
 
+Next, update the `Circle` component to change its color based on the cell state. If the cell 
+state is 1 or 2 the circle will change to be black or red respectively.
+
+```javascript
+function Circle(props){
+    var color = "white"
+    if(props.cell == 1){
+        color = "black"
+    }
+    else if(props.cell == 2){
+        color = "red"
+    }
+    var style = {
+        backgroundColor:color,
+        border: "1px solid black",
+        borderRadius: "100%",
+        paddingTop: "98%"
+    }
+    return (
+       <div style = {style}></div>
+    )
+}
+```
+
+If you open up the console and click a cell on the grid, you can see that "clicked" will be output to the console log.
