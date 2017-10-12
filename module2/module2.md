@@ -1138,3 +1138,27 @@ Lastly, edit the `<h1>` tag to display the winner if the game has ended.
 
 The game should now display the winner of the game and stop the game if someone wins.
 
+### Step 8: Adding reset functionality
+
+The last step is to make the **Restart** button restart the game.
+
+First, create a method called `restart()` within the `Game` component. This method will 
+reset the cells, winner and player state attributes.
+
+```javascript
+restart(){
+    var cells = [];
+    for(let i = 0; i < 6; i++ ){
+      cells.push(new Array(7).fill(0));
+    }
+    this.setState({ player : false, cells : cells, winner:0})
+}
+```
+
+Next, edit the button element's `onClick` attribute to call the `restart()` method.
+
+```javascript
+<button onClick = { () => this.restart()}>Restart</button>
+```
+
+Pressing the restart button should now restart the game.
