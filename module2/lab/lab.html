@@ -28,12 +28,24 @@
             ['Question number 9','Option 0','Option 1','Option 2','Option 3',0],
         ];
         
+        class AnswerSection extends React.Component{
+        	constructor(props){
+        		super(props);
+        		this.state={text: this.props.text};
+        		console.log("AnswerSection - this.props.text: " + this.props.text)
+        	}
+        	render(){
+        		return(
+					<button>{this.state.text}</button>
+        		)
+        	}
+        }
+                
         class QuestionSection extends React.Component{
         	constructor(props){
         		super(props);
         		this.state={text: this.props.text};
         		console.log("this.props.text: " + this.props.text)
-        		//his.state = {foo:123,bar:456}
         	}
         	render(){
         		return(
@@ -46,7 +58,7 @@
         }
         
         ReactDOM.render(
-            <QuestionSection text={questions[0][0]} />,
+            <AnswerSection text={questions[0][1]} />,
             document.getElementById("root")
         )
         
