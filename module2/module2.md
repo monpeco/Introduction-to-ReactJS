@@ -1012,3 +1012,38 @@ Now if you click on a grid cell, the player state will alternate.
 
 The message at the top will display which player's turn it is and the pieces dropped will have their 
 color set based on the player that dropped them.
+
+
+### Step 6: Adding functionality to force pieces to drop all the way down
+
+The next step is to force pieces to drop all the way down until they are on top of another piece or 
+on the bottom row.
+
+To help us accomplish this, we will create a function called `findAvailable(col)` that will let us know 
+which row a piece should be placed in when it is dropped in a specific column.
+
+The `findAvailableRow(col)` method loops through the cells state attribute and checks all of the 
+cells in a specified column. It starts at the bottom of the column and checks each grid cell to see 
+if a piece has been placed there. If a grid cell is empty, the method will return the row of that cell. 
+Otherwise, it will return -1.
+
+```javascript
+findAvailableRow(col){
+for(var i = 0; i < 6; i++){
+  if(this.state.cells[i][col] == 0){
+	return i;
+  } 
+}
+return -1;
+}
+```
+
+Next, we will modify the `handleClick` method to update the temp state cell 2-D array based on the 
+row returned by `findAvailableRow`.
+
+```javascript
+var newRow = this.findAvailableRow(col)
+temp[newRow][col] = this.state.player? 1 : 2
+```
+
+Now if you test the application, the pieces should drop all the way down.
