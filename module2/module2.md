@@ -1123,3 +1123,18 @@ checkVictory(row,col){
 
 }
 ```
+Also, add this to the top of the `handleClick` method to stop the game once someone has won.
+
+```javascript
+if(this.state.winner)
+    return
+```
+
+Lastly, edit the `<h1>` tag to display the winner if the game has ended.
+
+```javascript
+<h1>{this.state.winner > 0 ?  this.state.winner == 1? "Black Wins":"Red Wins": this.state.player? "Blacks Turn" : "Reds Turn"} </h1>
+```
+
+The game should now display the winner of the game and stop the game if someone wins.
+
