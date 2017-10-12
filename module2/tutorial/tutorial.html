@@ -95,14 +95,14 @@
                 for(let i=0; i<6; i++){
                     temp.push(this.state.cells[i].slice())
                 }
-                temp[row][col] = 1;
-                this.setState({cells: temp}, () => { console.log(this.state.cells); } )
+                temp[row][col] = this.state.player? 1 : 2;
+                this.setState({cells: temp, player: !this.state.player}, () => { console.log("cells:" + this.state.cells + ", player: " + this.state.player); } )
                 
             }
             render(){
                 return(
                     <div>
-                        <h1>Blacks Turn</h1>
+                        <h1>{this.state.player? "Blacks Turn" : "Reds Turn"}</h1>
                         <Board cells={this.state.cells} handleClick={this.handleClick} />
                         <button>Restar</button>
                     </div>

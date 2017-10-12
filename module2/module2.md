@@ -983,3 +983,32 @@ If you click on a grid cell now, the corresponding grid circle will now turn bla
 clicked, it calls the `handleClick()` method which updates the cells state attribute. The state is then 
 passed down until it reaches the Circle component and the circle updates its color to reflect the cell 
 state.
+
+### Step 5: Adding functionality to alternate player
+
+The next step is to switch the player everytime a new piece is dropped. The pieces should also alternate 
+colors based on the player that dropped them.
+
+First, edit the `handleClick` method to alternate the player state everytime a piece is dropped.
+
+```javascript
+this.setState({cells:temp, player: !this.state.player})
+```
+
+Also, set the value of the `temp` state cell to equal **1** if `this.player.state` is `true` and **2** 
+if it is `false`.
+
+```javascript
+temp[row][col] = this.state.player? 1 : 2
+```
+
+Next, edit the `<h1>` tag in the `Game` component to output whose turn it is based on the player state attribute.
+
+```javascript
+<h1>{this.state.player? "Blacks Turn" : "Red Turn"}</h1>
+```
+
+Now if you click on a grid cell, the player state will alternate.
+
+The message at the top will display which player's turn it is and the pieces dropped will have their 
+color set based on the player that dropped them.
