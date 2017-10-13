@@ -40,7 +40,7 @@
 		  
 		function AnswerSection(props){
 			return(
-				<button>{props.text}</button>
+				<button onClick={props.handleClick}>{props.text}</button>
 			)
 		}
 
@@ -57,11 +57,15 @@
         class TriviaApplication extends React.Component{
         	constructor(props){
         		super(props);
+				this.handleClick = this.handleClick.bind(this);
         	}
+			handleClick(){
+				console.log("click");
+			}
         	render(){
 				var answers = [];
 				for(let i=1; i<5; i++){
-					answers.push(<AnswerSection text={questions[0][i]}/>)
+					answers.push(<AnswerSection text={questions[0][i]}  handleClick={this.handleClick} />)
 				}
         		return(
         			<div>
