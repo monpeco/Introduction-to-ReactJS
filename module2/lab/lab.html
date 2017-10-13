@@ -40,7 +40,7 @@
 		  
 		function AnswerSection(props){
 			return(
-				<button onClick={props.handleClick}>{props.text}</button>
+				<button onClick={ () => props.handleClick(props.index)}>{props.text}</button>
 			)
 		}
 
@@ -59,13 +59,13 @@
         		super(props);
 				this.handleClick = this.handleClick.bind(this);
         	}
-			handleClick(){
-				console.log("click");
+			handleClick(index){
+				console.log("click" + index);
 			}
         	render(){
 				var answers = [];
 				for(let i=1; i<5; i++){
-					answers.push(<AnswerSection text={questions[0][i]}  handleClick={this.handleClick} />)
+					answers.push(<AnswerSection text={questions[0][i]}  handleClick={this.handleClick} index={i-1}/>)
 				}
         		return(
         			<div>
