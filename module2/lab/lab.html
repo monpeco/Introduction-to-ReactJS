@@ -16,16 +16,16 @@
                 
         // All the questions, options to the questions and the correct answer
         var questions = [
-            ['Question number 0','Option 0','Option 1','Option 2','Option 3',0],
-            ['Question number 1','Option 0','Option 1','Option 2','Option 3',0],
-            ['Question number 2','Option 0','Option 1','Option 2','Option 3',0],
-            ['Question number 3','Option 0','Option 1','Option 2','Option 3',0],
-            ['Question number 4','Option 0','Option 1','Option 2','Option 3',0],
-            ['Question number 5','Option 0','Option 1','Option 2','Option 3',0],
-            ['Question number 6','Option 0','Option 1','Option 2','Option 3',0],
-            ['Question number 7','Option 0','Option 1','Option 2','Option 3',0],
-            ['Question number 8','Option 0','Option 1','Option 2','Option 3',0],
-            ['Question number 9','Option 0','Option 1','Option 2','Option 3',0],
+            ['Question number 0','Option 00','Option 01','Option 02','Option 03',0],
+            ['Question number 1','Option 10','Option 11','Option 12','Option 13',0],
+            ['Question number 2','Option 20','Option 21','Option 22','Option 23',0],
+            ['Question number 3','Option 30','Option 31','Option 32','Option 33',0],
+            ['Question number 4','Option 40','Option 41','Option 42','Option 43',0],
+            ['Question number 5','Option 50','Option 51','Option 52','Option 53',0],
+            ['Question number 6','Option 60','Option 61','Option 62','Option 63',0],
+            ['Question number 7','Option 70','Option 71','Option 72','Option 73',0],
+            ['Question number 8','Option 80','Option 81','Option 82','Option 83',0],
+            ['Question number 9','Option 90','Option 91','Option 92','Option 93',0],
         ];
         
 		function ScoreSection(props){
@@ -58,7 +58,7 @@
         	constructor(props){
         		super(props);
 				this.handleClick = this.handleClick.bind(this);
-				this.state={number: 1, solution: questions[0][5]};
+				this.state={number: 0, solution: questions[0][5]};
         	}
 			handleClick(index){
 				console.log("click: " + index + "solution: " + this.state.solution + "number: " + this.state.number);
@@ -67,11 +67,11 @@
         	render(){
 				var answers = [];
 				for(let i=1; i<5; i++){
-					answers.push(<AnswerSection text={questions[0][i]}  handleClick={this.handleClick} index={i-1} />)
+					answers.push(<AnswerSection text={questions[this.state.number][i]}  handleClick={this.handleClick} index={i-1} />)
 				}
         		return(
         			<div>
-        				<QuestionSection text={questions[0][0]}/>
+        				<QuestionSection text={questions[this.state.number][0]}/>
         				<div>
 							{answers}
         				</div>
