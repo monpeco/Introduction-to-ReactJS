@@ -61,27 +61,35 @@
 				this.state={number: 0, solution: questions[0][5], corrects: 0, incorrects: 0};
         	}
 			handleClick(index){
-				if(this.state.number == 9){
-					return;
+				if(this.state.number <= 9){
+					var num = this.state.number;
+					if(index == this.state.solution){
+						console.log("Correct");
+						this.setState({corrects: this.state.corrects+1});
+					}else{
+						console.log("Inorrect!!!");
+						this.setState({incorrects: this.state.incorrects+1});
+					}
+				}else{
+					var num = 9;
 				}
 				console.log("click: " + index + ", solution: " + this.state.solution + ", number: " + this.state.number);
-				if(index == this.state.solution){
-					console.log("Correct");
-					this.setState({corrects: this.state.corrects+1});
-				}else{
-					console.log("Inorrect!!!");
-					this.setState({incorrects: this.state.incorrects+1});
-				}
-				this.setState({number: this.state.number+1, solution: questions[this.state.number+1][5]});
+
+				this.setState({number: this.state.number+1, solution: questions[num][5]});
 			}
         	render(){
+				if(this.state.number <= 9){
+					var num = this.state.number;
+				}else{
+					var num = 9;
+				}
 				var answers = [];
 				for(let i=1; i<5; i++){
-					answers.push(<AnswerSection text={questions[this.state.number][i]}  handleClick={this.handleClick} index={i-1} />)
+					answers.push(<AnswerSection text={questions[num][i]}  handleClick={this.handleClick} index={i-1} />)
 				}
         		return(
         			<div>
-        				<QuestionSection text={questions[this.state.number][0]}/>
+        				<QuestionSection text={questions[num][0]}/>
         				<div>
 							{answers}
         				</div>
