@@ -58,12 +58,19 @@
         	constructor(props){
         		super(props);
 				this.handleClick = this.handleClick.bind(this);
-				this.state={number: 0, solution: questions[0][5]};
+				this.state={number: 0, solution: questions[0][5], corrects: 0, incorrects: 0};
         	}
 			handleClick(index){
+				if(this.state.number == 9){
+					return;
+				}
 				console.log("click: " + index + ", solution: " + this.state.solution + ", number: " + this.state.number);
 				if(index == this.state.solution){
 					console.log("Correct");
+					this.setState({corrects: this.state.corrects+1});
+				}else{
+					console.log("Inorrect!!!");
+					this.setState({incorrects: this.state.incorrects+1});
 				}
 				this.setState({number: this.state.number+1, solution: questions[this.state.number+1][5]});
 			}
@@ -78,7 +85,7 @@
         				<div>
 							{answers}
         				</div>
-        				<ScoreSection correct={1} incorrect={2}/>
+        				<ScoreSection correct={this.state.corrects} incorrect={this.state.incorrects}/>
         			</div>
         		)
         	}
