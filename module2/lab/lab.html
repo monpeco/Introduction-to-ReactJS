@@ -58,14 +58,15 @@
         	constructor(props){
         		super(props);
 				this.handleClick = this.handleClick.bind(this);
+				this.state={solution: questions[0][5]};
         	}
 			handleClick(index){
-				console.log("click" + index);
+				console.log("click: " + index + "solution: " + this.state.solution);
 			}
         	render(){
 				var answers = [];
 				for(let i=1; i<5; i++){
-					answers.push(<AnswerSection text={questions[0][i]}  handleClick={this.handleClick} index={i-1}/>)
+					answers.push(<AnswerSection text={questions[0][i]}  handleClick={this.handleClick} index={i-1} />)
 				}
         		return(
         			<div>
