@@ -58,10 +58,7 @@
         	}
 			handleClick(index){
 				var num = this.state.number;
-				if(num > 9){
-					num = 9;
-					return;
-				}
+				if(num > 9) return;
 
 				//console.log("click: " + index + ", solution: " + this.state.solution + ", number: " + this.state.number);
 
@@ -73,20 +70,17 @@
 					this.setState({incorrects: this.state.incorrects+1});
 				}
 
-				this.setState({number: this.state.number+1, solution: questions[num][5]});
+				this.setState({number: this.state.number+1, solution: num>=9 ? questions[9][5] : questions[num+1][5]});
 			}
         	render(){
 				var num = this.state.number;
-				if(num > 9){
-					num = 9;
-				}
 				var answers = [];
 				for(let i=1; i<5; i++){
-					answers.push(<AnswerSection text={questions[num][i]}  handleClick={this.handleClick} index={i-1} />)
+					answers.push(<AnswerSection text={ num>=9 ? questions[9][i] : questions[num][i]}  handleClick={this.handleClick} index={i-1} />)
 				}
         		return(
         			<div>
-        				<QuestionSection text={questions[num][0]}/>
+        				<QuestionSection text={ num>=9 ? questions[9][0] : questions[num][0]}/>
         				<div>
 							{answers}
         				</div>
