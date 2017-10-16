@@ -129,3 +129,37 @@ ReactDOM.render(
   document.getElementById('root')
 )
 ```
+
+# Building a List Component
+
+It is useful to be able to build a React Component that can dynamically generate a list from an array property 
+that is passed into it.
+
+```javascript
+class ProductList extends React.Component{
+  constructor(props){
+    super(props)
+  }
+  render(){
+    var elements = this.props.productArray.map( (item,index) => {
+      return <li key={item.id}>Product: {item.product} | Price: ${item.price}  </li>
+    })
+    return <ol>{elements}</ol>
+  }
+}
+
+var array =[
+  {id: 100, product:"Apple", price:3},
+  {id: 101, product:"Banana", price:1},
+  {id: 102, product:"Carrot", price:2},
+  {id: 103, product:"Donuts", price:5},
+  {id: 104, product:"Eggplant", price:4}
+]
+
+
+ReactDOM.render(
+  <ProductList productArray = {array}/>,
+  document.getElementById('root')
+)
+```
+
