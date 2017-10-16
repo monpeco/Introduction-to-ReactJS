@@ -78,3 +78,54 @@ ReactDOM.render(
   document.getElementById('root')
 )
 ```
+
+# Adding Keys to List Items
+
+React uses **Keys** to help render list items quickly. Keys should be a string that uniquely identifies a list item 
+from the other items on the list, such as an ID attribute.
+
+Exmaple of using an ID as a key value:
+
+```javascript
+var array =[
+  {id: 100, product:"Apple", price:3},
+  {id: 101, product:"Banana", price:1},
+  {id: 102, product:"Carrot", price:2},
+  {id: 103, product:"Donuts", price:5},
+  {id: 104, product:"Eggplant", price:4}
+]
+
+var elements = array.map( (item) => {
+  return <li key={item.id}>Product: {item.product} | Price: ${item.price}  </li>
+})
+
+ReactDOM.render(
+  <ol>{elements}</ol>,
+  document.getElementById('root')
+)
+```
+
+If your array items do not have anything that can uniquely identify them, you can use the item index as a last resort 
+for the key value. The drawback to using indexes as keys is that list item reordering is slow to rerender.
+
+Example of using the item index as a key value:
+
+```javascript
+var array =[
+  {product:"Apple", price:3},
+  {product:"Banana", price:1},
+  {product:"Carrot", price:2},
+  {product:"Donuts", price:5},
+  {product:"Eggplant", price:4}
+]
+
+//the item index is the second argument to the map() method
+var elements = array.map( (item,index) => {
+  return <li key={index}>Product: {item.product} | Price: ${item.price}  </li>>
+})
+
+ReactDOM.render(
+  <ol>{elements}</ol>,
+  document.getElementById('root')
+)
+```
