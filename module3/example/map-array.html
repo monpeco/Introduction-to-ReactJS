@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+                
+        var array =[
+          {product:"Apple", price:3},
+          {product:"Banana", price:1},
+          {product:"Carrot", price:2},
+          {product:"Donuts", price:5},
+          {product:"Eggplant", price:4}
+        ]
+        
+        var elements = array.map((item) => {
+            return (<li>Product: {item.product} | Price: {item.price}</li>)
+        });
+        
+        ReactDOM.render(
+          <ol>{elements}</ol>,
+          document.getElementById('root')
+        )
+        
+    </script>
+</body>
+</html>

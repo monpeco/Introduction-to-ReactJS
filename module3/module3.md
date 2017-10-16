@@ -39,3 +39,42 @@ ReactDOM.render(
   document.getElementById('root')
 )
 ```
+
+# Using Map() to render arrays of React Elements
+
+The `map()` method is often used to create an array of React Elements. The `map()` method is called on an array and 
+returns a new array with a provided function applied to each element in the original array.
+
+Example of using the `map()` method to return an array of React Elements:
+
+```javascript
+var array =[
+  {product:"Apple", price:3},
+  {product:"Banana", price:1},
+  {product:"Carrot", price:2},
+  {product:"Donuts", price:5},
+  {product:"Eggplant", price:4}
+]
+
+var elements = array.map( (item) => {
+  return <li>Product: {item.product} | Price: ${item.price}  </li>>
+})
+
+ReactDOM.render(
+  <ol>{elements}</ol>,
+  document.getElementById('root')
+)
+```
+
+The map() method can also be directly used inside a JSX expression:
+
+```javascript
+ReactDOM.render(
+  <ol>{
+      array.map( (item) => 
+          <li>Product: {item.product} | Price: ${item.price} </li>
+      )}
+  </ol>,
+  document.getElementById('root')
+)
+```
