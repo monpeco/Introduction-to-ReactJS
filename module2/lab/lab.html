@@ -28,23 +28,34 @@
         ];
         
 		function ScoreSection(props){
+			var style = {
+				float: "right",
+				marginRight: 600
+			}
 			return(
-				<div>
-					<h1>correct: {props.correct}</h1>
-					<h1>incorrect: {props.incorrect}</h1>
+				<div style={style}>
+					<h1>Correct: {props.correct}</h1>
+					<h1>Incorrect: {props.incorrect}</h1>
 				</div>
 			)
 		}
 
 		function AnswerSection(props){
+			var style = {
+			    height: 50,
+			    width: 200,   
+			}
 			return(
-				<button onClick={ () => props.handleClick(props.index)}>{props.text}</button>
+				<button style={style} onClick={ () => props.handleClick(props.index)}>{props.text}</button>
 			)
 		}
 
 		function QuestionSection(props){
+			var style = {
+				color: "red"
+			}
 			return(
-				<div>
+				<div style={style}>
 					<h1>{props.text}</h1>
 				</div>
 			)
@@ -73,6 +84,12 @@
 				this.setState({number: this.state.number+1, solution: num>=9 ? questions[9][5] : questions[num+1][5]});
 			}
         	render(){
+        		  
+				var style = {
+					width: 350,
+					marginLeft: 50
+				};
+				
 				var num = this.state.number;
 				var answers = [];
 				for(let i=1; i<5; i++){
@@ -81,10 +98,10 @@
         		return(
         			<div>
         				<QuestionSection text={ num>=9 ? questions[9][0] : questions[num][0]}/>
-        				<div>
+        				<ScoreSection correct={this.state.corrects} incorrect={this.state.incorrects}/>
+        				<div style={style}>
 							{answers}
         				</div>
-        				<ScoreSection correct={this.state.corrects} incorrect={this.state.incorrects}/>
         			</div>
         		)
         	}
