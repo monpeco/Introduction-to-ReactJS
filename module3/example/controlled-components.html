@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+                
+        class ControlledInput extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={ value: '' };
+                this.handleChange = this.handleChange.bind(this);
+            }
+            handleChange(event){
+                this.setState({ value: event.target.value });
+                console.log("value: " + event.target.value);
+            }
+            render(){
+                return(
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                );
+            }
+        }
+        
+        
+        ReactDOM.render(
+          <ControlledInput/>,
+          document.getElementById('root')
+        )
+        
+    </script>
+</body>
+</html>
