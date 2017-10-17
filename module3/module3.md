@@ -243,3 +243,71 @@ Missing video
 
 #### Module 3 | Lists and Forms   Forms   Forms
 
+# Forms
+
+# Controlled Components
+
+HTML form elements such as inputs, text areas, and select fields naturally keep some internal state. 
+When we use HTML form elements in React, we tie that natural state to the React Component state so 
+that all of the state can be maintained by a single source.
+
+We accomplish this by doing the following two steps:
+
+1. Whenever the input value is changed, call an event handler to update the component state to the new input value
+2. Re render the the React Element with its value attribute set to the updated state input value
+
+Form elements that have their state's controlled by React in his manner are called **Controlled Components**.
+
+### Controlling Input fields
+
+To turn an input field into a **Controlled Component**, we must first declare an event handler that will update 
+the state input value whenever the form input value is changed.
+
+The `event.target.value` attribute can be used to obtain the form input value:
+
+```javascript
+handleChange(event){
+	this.setState({value: event.target.value})
+}
+```
+
+We then must attach the event handler to the `<input>` element and set the input value equal to the state input value:
+
+```javascript
+render(){
+	return (
+		<input type = "text" value = {this.state.value} onChange = {this.handleChange}/>
+	)
+}
+```
+
+Lastly, we must not forget to bind the event handler to the component instance and also declare the initial state value:
+
+```javascript
+constructor(props){
+	super(props)
+	this.state = {value: ''}
+	this.handleChange = this.handleChange.bind(this)
+}
+```
+
+Putting it all together:
+
+```javascript
+class ControlledInput extends React.Component{
+
+    constructor(props){
+        super(props)
+        this.state = {value: ''}
+        this.handleChange = this.handleChange.bind(this)
+    }
+    handleChange(event){
+        this.setState({value: event.target.value})
+    }
+    render(){
+        return (
+            <input type = "text" value = {this.state.value} onChange = {this.handleChange}/>
+        )
+    }
+}
+```
