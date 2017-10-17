@@ -207,3 +207,39 @@ ReactDOM.render(
 )
 ```
 
+--- 
+
+#### Module 3 | Lists and Forms   Lists   Lists Video
+
+Missing video
+
+> Hello, in this video I will be covering how to create a list component
+> back and dynamically generate a list of react elements. The end goal
+> is to take an array of items pass it into a component and hide a
+> dynamic generated list of React or spread into the page. So to begin,
+> let's create a class component named ProductList. Next, we're gonna
+> create its constructor. We're gonna pass it props so that it can use
+> properties. Next, we're gonna call super so that the properties work
+> correctly. And then, we're gonna define the render method. To start
+> off we're going to return an ordered list tag, cuz all of our list
+> items have to be surrounded by something. Now we're gonna define what
+> we're gonna return. So I'm gonna create a variable named elements, and
+> I'm going to set that equal to this item array that was passed in.
+> This array was passed in as a productArray attribute, so I can
+> reference it by this.props.productArray. Now I'm gonna use the map
+> method to transform all of the values in the array. I'm gonna
+> transform them into a bunch of list items instead of just having
+> objects. So I could do that by writing the call back like this. This
+> item And inside list items, I'm just going to define, Product is being
+> displayed, And what the price of the product is. Now, I'm gonna use a
+> JSX expression to embed this elements variable to be ordered list
+> type. And now, if we look over here, you see that a list of React
+> elements has been rendered to the page. Now, it is important to add a
+> key to this items. So, I'm gonna define the attribute and set that
+> equal to the item.id attribute. This will ensure that the lists
+> re-render efficiently whenever an update happens.
+
+---
+
+#### Module 3 | Lists and Forms   Forms   Forms
+
