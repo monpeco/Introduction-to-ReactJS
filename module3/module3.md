@@ -385,3 +385,30 @@ class ControlledSelect extends React.Component{
     }
 }
 ```
+
+Select Components can also have their options dynamically generated using the `map()` method. Example:
+
+```javascript
+class ControlledSelect extends React.Component{
+
+    constructor(props){
+        super(props)
+        this.state = {value: 'apple'}
+        this.handleChange = this.handleChange.bind(this)
+    }
+    handleChange(event){
+        this.setState({value: event.target.value})
+    }
+    render(){
+        var array = ["apple","banana","carrot","donuts"]
+        var options = array.map( (item) =>
+            <option value = {item}>{item}</option>
+        )
+        return (
+          <select value={this.state.value} onChange={this.handleChange}>
+            {options}
+          </select>
+        )
+    }
+}
+```
