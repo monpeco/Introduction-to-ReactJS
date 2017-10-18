@@ -65,11 +65,35 @@
             }
         }
         
+        class ControlledSelect extends React.Component{
+        
+            constructor(props){
+                super(props)
+                this.state = {value: 'apple'}
+                this.handleChange = this.handleChange.bind(this)
+            }
+            handleChange(event){
+                this.setState({value: event.target.value})
+                console.log("event.target.value: " + event.target.value);
+            }
+            render(){
+                return(
+                    <select value={this.state.value} onChange={this.handleChange}>
+                        <option value="apple">apple</option>
+                        <option value="banana">banana</option>
+                        <option value="carrot">carrot</option>
+                        <option value="donuts">donuts</option>
+                    </select>
+                )
+            }
+        }
+        
         ReactDOM.render(
             <div>
                 <ControlledInput/>
                 <ControlledCheckbox/>
                 <ControlledTextArea/>
+                <ControlledSelect/>
             </div>,
           document.getElementById('root')
         )

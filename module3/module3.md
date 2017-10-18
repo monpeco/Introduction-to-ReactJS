@@ -358,3 +358,30 @@ class ControlledTextArea extends React.Component{
 }
 ```
 
+### Controlling Select Tags
+
+Controlling Select Tags is similar to controlling Input Fields in React:
+
+```javascript
+class ControlledSelect extends React.Component{
+
+    constructor(props){
+        super(props)
+        this.state = {value: 'apple'}
+        this.handleChange = this.handleChange.bind(this)
+    }
+    handleChange(event){
+        this.setState({value: event.target.value})
+    }
+    render(){
+        return (
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="apple">apple</option>
+            <option value="banana">banana</option>
+            <option value="carrot">carrot</option>
+            <option value="donuts">donuts</option>
+          </select>
+        )
+    }
+}
+```
