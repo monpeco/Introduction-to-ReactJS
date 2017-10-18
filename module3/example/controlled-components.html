@@ -30,9 +30,29 @@
             }
         }
         
+        class ControlledCheckbox extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={ checked: false };
+                this.handleChange = this.handleChange.bind(this);
+            }
+            handleChange(event){
+                this.setState({ checked: event.target.checked });
+                console.log("checked: " + event.target.checked);
+            }
+            render(){
+                return(
+                    <input type="checkbox" checked={this.state.checked} onChange={this.handleChange} />
+                )
+            }
+            
+        }
         
         ReactDOM.render(
-          <ControlledInput/>,
+            <div>
+                <ControlledInput/>
+                <ControlledCheckbox/>
+            </div>,
           document.getElementById('root')
         )
         
