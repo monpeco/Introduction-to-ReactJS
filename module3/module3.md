@@ -334,3 +334,27 @@ class ControlledInput extends React.Component{
     }
 }
 ```
+
+### Controlling TextArea fields
+
+Controlling TextAreas is similar to controlling Input Fields in React:
+
+```javascript
+class ControlledTextArea extends React.Component{
+
+    constructor(props){
+        super(props)
+        this.state = {value: ''}
+        this.handleChange = this.handleChange.bind(this)
+    }
+    handleChange(event){
+        this.setState({value: event.target.value})
+    }
+    render(){
+        return (
+            <textarea type = "text" value = {this.state.value} onChange = {this.handleChange}/>
+        )
+    }
+}
+```
+
