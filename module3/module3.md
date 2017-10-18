@@ -311,3 +311,26 @@ class ControlledInput extends React.Component{
     }
 }
 ```
+
+### Controlling Checkboxes
+
+Checkboxes use a checked attribute instead of a value attribute.
+
+```javascript
+class ControlledInput extends React.Component{
+
+    constructor(props){
+        super(props)
+        this.state = {checked: false}
+        this.handleChange = this.handleChange.bind(this)
+    }
+    handleChange(event){
+        this.setState({checked: event.target.checked})
+    }
+    render(){
+        return (
+            <input type = "checkbox" checked = {this.state.checked} onChange = {this.handleChange}/>
+        )
+    }
+}
+```
