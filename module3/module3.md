@@ -492,3 +492,29 @@ missing video
 ---
 
 #### Module 3 | Lists and Forms   Module 3 Tutorial   Module 3 Tutorial
+
+# Module 3 Tutorial
+
+In this tutorial we are are going to learn how to build an application 
+that allows users to post topics and upvote/downvote the topics.
+
+[Link to Demo/Solution](https://codepen.io/benjlin/pen/rwGKjW)
+
+Image of an HTML DOM
+![HTML DOM](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/9df1f12316a53541b020144002ee0b53/asset-v1:Microsoft+DEV281x+4T2017+type@asset+block/m3tutorial1.PNG)
+
+# Step 1: Breaking up the application into components
+
+Image of an HTML DOM
+![HTML DOM](https://d37djvu3ytnwxt.cloudfront.net/assets/courseware/v1/282f538d62e8eb239d6c417d27e2ee64/asset-v1:Microsoft+DEV281x+4T2017+type@asset+block/m3tutorial1divided.png)
+
+As the above image shows, we have broken up the application into 
+several sections:
+
+* A section that contains an **input field**(red)
+* A section that contains a **submit button**(brown)
+* A component that contains a **list of posts**(orange)
+* A subcomponent that represents a **post**(blue)
+* A sub-subcomponent that represents a **square button**(red)
+* A sub-subcomponent that represents **text** (green)
+
