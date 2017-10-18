@@ -450,3 +450,45 @@ class ControlledMultiple extends React.Component{
     }
 }
 ```
+---
+
+### Module 3 | Lists and Forms   Forms   Forms Video
+
+# Forms Video
+
+missing video
+
+> Hello. In this video I will be explaining, how to take an input
+> element. And transform it into a controlled component. So to start,
+> let's define a class component. It's the unit control input. Now it
+> has been on class imported, because we have to stay. So we can not
+> define it as a functional point. Now let's define deconstructor,
+> props, and let's do super props. Now let's define your render method.
+> And to start off, let's return a simple input element. And if you look
+> over here, you can see that the input element has been rendered to the
+> page. Now in order to turn this input element into a control
+> component, we need to tie its value to the component state. So let's
+> do that. So first, let's define some initial states, this.states. And
+> we can set the value of the initial state value to be and end the
+> string. Now, what we need to do is define an event handler. And what
+> this event handler is gonna do is whenever the input value is changed.
+> It's going to take that changed value and set it equal to the
+> component state. So let's do that. This set state. And we can pass in
+> value and set it equal to event target value. Which represents the new
+> value of the inputs after it's been changed. So lastly we need to
+> attach this to the input element by setting the on change attribute
+> equal to handle change. And Let's test this by putting a console log.
+> We can log the new state value after it's been updated. So let's test
+> if this works. Okay I'm typing stuff but nothing's being logged to the
+> console. There's a reason for this. The reason why it doesn't work is
+> because we do not bind the handle change method to the custom point.
+> So let's do that. So now let's test if it works. So now if you look at
+> the console, remember the input elements is changed. The panel change
+> method fires, and then it sets the state value to panel change value.
+> The bind method ensures that the panel change method is called within
+> the right context. And that is how to create a control equivalent out
+> of an input element.
+
+---
+
+#### Module 3 | Lists and Forms   Module 3 Tutorial   Module 3 Tutorial
