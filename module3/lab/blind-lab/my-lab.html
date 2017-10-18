@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+                
+    
+    class PostApplication extends React.Component{
+    	constructor(props){
+    		super(props);
+    		this.state={ posts: {} };
+    	}
+    	handleChange(event){
+    		this.setState( {posts: {}} );
+    	}
+    	render(){
+    		return(<h2>test</h2>)
+    	}
+    }
+    
+    function InputField(){
+    	return( <input name="inputName" type="text" /> );
+    }
+    
+    ReactDOM.render(
+    	<InputField/>,
+    	document.getElementById("root")
+    );
+
+        
+    </script>
+</body>
+</html>
