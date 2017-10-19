@@ -30,9 +30,45 @@
     function InputField(){
     	return( <input name="inputName" type="text" /> );
     }
+        
+    function SubmitButton(){
+    	return( <button name="submitButton" >Submit</button> );
+    }
     
+    function CloseButton(){
+    	return( <button name="closeButton" >X</button> );
+    }
+    
+    function PostText(){
+    	return( <span>This is a example post</span> );
+    }
+
+    function UpButton(){
+    	return( <button name="UpButton" >+</button> );
+    }
+    
+    function VotesText(){
+    	return( <span>3</span> );
+    }
+
+    function DownButton(){
+    	return( <button name="UpButton" >-</button> );
+    }
+
     ReactDOM.render(
-    	<InputField/>,
+        <div>
+            <div>
+        	    <InputField/>
+        	    <SubmitButton/>
+        	</div>
+            <div>
+        	    <CloseButton/>
+        	    <PostText/>
+        	    <UpButton/>
+        	    <VotesText/>
+        	    <DownButton/>
+    	    </div>
+    	</div>,
     	document.getElementById("root")
     );
 
