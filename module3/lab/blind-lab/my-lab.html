@@ -23,7 +23,21 @@
     		this.setState( {posts: {}} );
     	}
     	render(){
-    		return(<h2>test</h2>)
+    		return(
+                <div>
+                    <div>
+                	    <InputField/>
+                	    <SubmitButton/>
+                	</div>
+                    <div>
+                	    <CloseButton/>
+                	    <PostText/>
+                	    <UpButton/>
+                	    <VotesText/>
+                	    <DownButton/>
+            	    </div>
+            	</div>    
+    		);
     	}
     }
     
@@ -56,19 +70,7 @@
     }
 
     ReactDOM.render(
-        <div>
-            <div>
-        	    <InputField/>
-        	    <SubmitButton/>
-        	</div>
-            <div>
-        	    <CloseButton/>
-        	    <PostText/>
-        	    <UpButton/>
-        	    <VotesText/>
-        	    <DownButton/>
-    	    </div>
-    	</div>,
+        <PostApplication/>,
     	document.getElementById("root")
     );
 
