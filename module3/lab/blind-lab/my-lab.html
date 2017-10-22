@@ -38,7 +38,7 @@
                 
                 posts_temp.push( this.state.posts )
 
-                posts_temp.push( <CloseButton /> )
+                posts_temp.push( <button name="closeButton" value={this.state.closeButton} onClick={this.handleClick}>X</button> ) 
                 posts_temp.push( <h1>{this.state.currentPost}</h1> )
                 posts_temp.push( <UpButton /> )
                 posts_temp.push( <VotesText /> )
@@ -46,11 +46,14 @@
 
     		    this.setState({ posts: posts_temp }, () => {
     	            console.log("posts: " + this.state.posts)
-
     		    });
-
-
     	    }
+    	    if(event.target.name == "closeButton"){
+    	        console.log("handleClick: " + event.target.name);
+                for (var i in this.state.posts) {
+                  alert(this.state.posts[i]);
+                }
+            }
     	}
     	render(){
     		return(
