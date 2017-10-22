@@ -18,15 +18,18 @@
     	constructor(props){
     		super(props);
     		this.state={ posts: {} };
+    		this.handleChange = this.handleChange.bind(this);
     	}
     	handleChange(event){
+    	    console.log("handleChange: " + event.target.name);
     		this.setState( {posts: {}} );
     	}
     	render(){
     		return(
                 <div>
                     <div>
-                	    <InputField/>
+                	    <InputField value={this.state.inputName} handleChange={this.handleChange} />
+                	    
                 	    <SubmitButton/>
                 	</div>
                     <div>
@@ -41,8 +44,8 @@
     	}
     }
     
-    function InputField(){
-    	return( <input name="inputName" type="text" /> );
+    function InputField(props){
+    	return( <input name="inputName" type="text" value={props.value} onChange={props.handleChange} /> );
     }
         
     function SubmitButton(){
