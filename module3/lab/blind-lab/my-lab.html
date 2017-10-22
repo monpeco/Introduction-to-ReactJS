@@ -35,16 +35,15 @@
     	        console.log("currentPost: " + this.state.currentPost);
 
                 var posts_temp = [];
+                
+                posts_temp.push( this.state.posts )
+
                 posts_temp.push( <CloseButton /> )
                 posts_temp.push( <h1>{this.state.currentPost}</h1> )
                 posts_temp.push( <UpButton /> )
                 posts_temp.push( <VotesText /> )
                 posts_temp.push( <DownButton /> )
-                
-                posts_temp.push( this.state.post )
 
-                
-                
     		    this.setState({ posts: posts_temp }, () => {
     	            console.log("posts: " + this.state.posts)
 
