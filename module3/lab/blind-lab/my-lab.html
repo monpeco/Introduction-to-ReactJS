@@ -19,9 +19,18 @@
     		super(props);
     		this.state={ posts: {} };
     		this.handleChange = this.handleChange.bind(this);
+    		this.handleClick = this.handleClick.bind(this);
     	}
     	handleChange(event){
-    	    console.log("handleChange: " + event.target.name);
+    	    console.log("name: " + event.target.name + ", value: " + event.target.value);
+
+    	}
+    	
+    	handleClick(event){
+    	    if(event.target.name == "submitButton"){
+    	        console.log("submitButton");
+
+    	    }
     		this.setState( {posts: {}} );
     	}
     	render(){
@@ -30,7 +39,7 @@
                     <div>
                 	    <InputField value={this.state.inputName} handleChange={this.handleChange} />
                 	    
-                	    <SubmitButton/>
+                	    <SubmitButton value={this.state.submitButton} handleClick={this.handleClick}/>
                 	</div>
                     <div>
                 	    <CloseButton/>
@@ -48,8 +57,8 @@
     	return( <input name="inputName" type="text" value={props.value} onChange={props.handleChange} /> );
     }
         
-    function SubmitButton(){
-    	return( <button name="submitButton" >Submit</button> );
+    function SubmitButton(props){
+    	return( <button name="submitButton" value={props.value}  onClick={props.handleClick} >Submit</button> );
     }
     
     function CloseButton(){
