@@ -17,21 +17,41 @@
     class PostApplication extends React.Component{
     	constructor(props){
     		super(props);
-    		this.state={ posts: {} };
+    		
+    		var posts = [];
+    		this.state={ posts: posts };
+   
     		this.handleChange = this.handleChange.bind(this);
     		this.handleClick = this.handleClick.bind(this);
     	}
     	handleChange(event){
     	    console.log("name: " + event.target.name + ", value: " + event.target.value);
+    		this.setState( {currentPost: event.target.value} );
 
     	}
-    	
     	handleClick(event){
     	    if(event.target.name == "submitButton"){
     	        console.log("submitButton");
+    	        console.log("currentPost: " + this.state.currentPost);
+
+                var posts_temp = [];
+                posts_temp.push( <CloseButton /> )
+                posts_temp.push( <h1>{this.state.currentPost}</h1> )
+                posts_temp.push( <UpButton /> )
+                posts_temp.push( <VotesText /> )
+                posts_temp.push( <DownButton /> )
+                
+                posts_temp.push( this.state.post )
+
+                
+                
+    		    this.setState({ posts: posts_temp }, () => {
+    	            console.log("posts: " + this.state.posts)
+
+    		    });
+
 
     	    }
-    		this.setState( {posts: {}} );
     	}
     	render(){
     		return(
@@ -42,11 +62,7 @@
                 	    <SubmitButton value={this.state.submitButton} handleClick={this.handleClick}/>
                 	</div>
                     <div>
-                	    <CloseButton/>
-                	    <PostText/>
-                	    <UpButton/>
-                	    <VotesText/>
-                	    <DownButton/>
+                        {this.state.posts}
             	    </div>
             	</div>    
     		);
