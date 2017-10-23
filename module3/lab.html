@@ -58,13 +58,18 @@
         
         class App extends React.Component{
             constructor(props){
-                super(props);
+                super(props)
+                this.state = {value:"", items: []};
+            } 
+            handleChange(event){
+                this.setState({value: event.target.value});
+                console.log(event.target.value)
             }
             render(){
-                return(
+                return (
                     <div>
-                        App
-                    </div>                    
+                        <input value={this.state.value} onChange={this.handleChange.bind(this)} />
+                    </div>
                 )
             }
         }

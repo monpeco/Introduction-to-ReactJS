@@ -619,11 +619,17 @@ other components.
 class App extends React.Component{
     constructor(props){
         super(props)
+        this.state = {value:"", items : []}
     } 
+    handleChange(event){
+        this.setState({value:event.target.value})
+        console.log(this.state.value)
+
+    }
     render(){
         return (
             <div>
-                App
+                <input value = {this.state.value} onChange = {this.handleChange.bind(this)}/>
             </div>
         )
     }
@@ -639,4 +645,42 @@ ReactDOM.render(
 )
 ```
 
+Next, we are going to initialize the App component's state. The **App** component 
+will have two state attributes: one to hold the value of the input element and one 
+to hold the array of post data.
 
+Add this to the **constructor()** method:
+
+```javascript
+    this.state = {value:"", items : []}
+```
+
+Next, we are going to add an input element and make it a controlled component 
+by tyings its value to the component state. We will accomplish this by declaring 
+a **handleChange()** method that updates the components state whenever the 
+input element's value is changed. We also have to bind the **handleChange** method 
+to the **App** component so that the method refers to the right place.
+
+```javascript
+class App extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {value:"", items : []}
+    } 
+    handleChange(event){
+        this.setState({value:event.target.value})
+        console.log(this.state.value)
+
+    }
+    render(){
+        return (
+            <div>
+                <input value = {this.state.value} onChange = {this.handleChange.bind(this)}/>
+            </div>
+        )
+    }
+}
+```
+
+Test the input field to make sure that it is tying its value back to the component state 
+by typing in some characters and viewing the console.
