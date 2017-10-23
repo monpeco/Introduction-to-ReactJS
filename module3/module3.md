@@ -684,3 +684,51 @@ class App extends React.Component{
 
 Test the input field to make sure that it is tying its value back to the component state 
 by typing in some characters and viewing the console.
+
+
+### Step 4: Adding values to the Post List
+
+Next, are are going to add the functionality to add items to the state array.
+
+To start, we are going to declare an event handler called **addItem()** to the App component. 
+The method first makes a copy of the current items state array by using the `slice()` array. 
+Then it takes in the value state attribute and truncates it to 20 characters using 
+the `substring()` method. Then it creates an object containing the truncated string as a title 
+and the value 0 as its score and adds it to the copied items array. Then it sorts the copied 
+items array in descending order of score. Lastly, it updates the state to equal the sorted 
+copied items array and sets the value state attribute back to an empty string.
+
+Add to App component:
+```javascritp
+    addItem(){
+        var itemsCopy = this.state.items.slice()
+        var truncatedString = this.state.value.substring(0,20);
+        itemsCopy.push({"title":truncatedString,"score":0})
+        itemsCopy.sort((a,b)=>{
+          return b.score - a.score;
+        })
+        this.setState({items:itemsCopy,value:""})
+    }
+```
+
+Now that the **addItem()** event handler has been created, we need to create a submit button 
+that will call the **addItem()** method when it is clicked. We will add it below the input element 
+in the **render()** method of the App component.
+
+Edit the button element in the **App render()** method:
+
+```javascritp
+    <button onClick = { () => this.addItem() }>Submit</button>
+```
+
+Now lets add the **PostList** component inside the **render()** method of the App component. We will 
+supply its **postList** attribute with the **this.state.items** array that contains all of the post data.
+
+Add to the **App render()** method:
+
+```javascritp
+    <PostList postList = {this.state.items}/>
+```
+
+Test the **App** component by typing something in the input field and pressing the submit button. 
+A post should be added to the **PostList** with a title equal to the string entered in the input field.
