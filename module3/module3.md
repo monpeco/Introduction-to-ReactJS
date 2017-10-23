@@ -518,3 +518,62 @@ several sections:
 * A sub-subcomponent that represents a **square button**(red)
 * A sub-subcomponent that represents **text** (green)
 
+# Step 2: Creating the PostList Component
+
+Creating the **PostButton** Component
+
+### To start off we are going to create the component that represents the square buttons that are a part of each of the posts. 
+We are going to add some style to it and display its label property.
+
+```javascript
+function PostButton(props){
+    var style = {
+        width:24,
+        height:24
+    }
+    return (
+        <button style = {style}>{props.label}</button>
+    )
+}
+```
+
+### Creating the PostText Component
+
+Next, we are going to create the component that represents the text areas that are a part of each of the posts (**PostText**). 
+We are going to add some style to it and display its label property. Its width will vary based on its width property.
+
+```javascript
+function PostText(props){
+    var style = {
+        border:"1px solid black",
+        width: props.width
+    }
+    return (
+        <div style = {style}>{props.text}</div>
+    )
+}
+```
+
+### Creating the Post Component
+
+Next, we are going to create the component **Post** that represents the posts that go in the list of posts. We are going to 
+add some styling to make it display its subcomponents horizontally. We are also going to pass in a title and 
+score property down to its **PostText** components.
+
+```javascript
+function Post(props){
+    var style = {
+        display:"flex"
+    }
+    return (
+        <div style = {style}>
+            <PostButton label = "x"/>
+            <PostText text = {props.title} width = "200"/>
+            <PostButton label = "+" />
+            <PostText text = {props.score} width = "20"/>
+            <PostButton label = "-"/>
+        </div>
+    )
+}
+```
+

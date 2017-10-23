@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+                
+        function PostButton(props){
+            var style = {
+                width: 24,
+                height: 24
+            }
+            return( <button style={style}>{props.lable}</button> );
+        }
+        
+        function PostText(props){
+            var style = {
+                border: "1px solid black",
+                width: props.width
+            }
+            return ( <div style={style}>{props.text}</div> );
+        }
+        
+        function Post(props){
+            var style = {
+                display: "flex"
+            }
+            return(
+                <div style={style}>
+                    <PostButton label="x"/>
+                    <PostText width="100" text={props.title} />
+                    <PostButton label="+"/>
+                    <PostText width="20" text={props.score} />
+                    <PostButton label="-"/>
+                </div>
+            )
+        }
+        
+        ReactDOM.render(
+            <Post title="Post title" score="0" />,
+            document.getElementById("root")
+        )
+        
+    </script>
+</body>
+</html>
