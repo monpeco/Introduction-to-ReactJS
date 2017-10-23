@@ -577,3 +577,37 @@ function Post(props){
 }
 ```
 
+### Creating the PostList Component
+
+Next, we are going to create the component that represents the list of posts (**PostList**). 
+We are going to accomplish this by using the `map()` method to generate a **Post** component 
+for each item in the componets **PostList** property array. We will wrap all of the **Post** 
+components in a `<ol>` tag.
+
+```javascript
+function PostList(props){
+    return (
+        <ol>
+        {
+            props.postList.map((item,index) => 
+                <Post key = {index} 
+                      title = {item.title} 
+                      score = {item.score}
+                />
+             )
+         }
+        </ol>
+    )  
+}
+```
+
+Test the **PostList** component by rendering it to the page with some test data.
+
+```javascript
+ReactDOM.render(
+    <PostList postList = {[1,2,3,4,5]}/>,
+    document.getElementById("root")
+)
+```
+
+

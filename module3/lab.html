@@ -44,8 +44,22 @@
             )
         }
         
+        function PostList(props){
+            return(
+                <ol>
+                {
+                    props.postList.map((item, index) => 
+                        <Post key={index} title={item.title} score={item.score} />
+                    )
+                }
+                </ol>
+            )
+        }
+        
+        var var1={title: "this is", score: 5};
+        
         ReactDOM.render(
-            <Post title="Post title" score="0" />,
+            <PostList postList={[var1,2,3,4,5]} />,
             document.getElementById("root")
         )
         
