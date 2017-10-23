@@ -36,7 +36,9 @@
 
                 var posts_temp = [];
                 
-                posts_temp.push( this.state.posts )
+                if(this.state.posts.length > 0){   
+                    posts_temp.push( this.state.posts )
+                }
 
                 posts_temp.push( <button name="closeButton" value={this.state.closeButton} onClick={this.handleClick} key={this.state.index}>X</button> ) 
                 posts_temp.push( <h1>{this.state.currentPost}</h1> )
