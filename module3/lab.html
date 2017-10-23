@@ -56,10 +56,24 @@
             )
         }
         
-        var var1={title: "this is", score: 5};
+        class App extends React.Component{
+            constructor(props){
+                super(props);
+            }
+            render(){
+                return(
+                    <div>
+                        App
+                    </div>                    
+                )
+            }
+        }
         
+        
+        var var1={title: "this is", score: 5};
+
         ReactDOM.render(
-            <PostList postList={[var1,2,3,4,5]} />,
+            <App />,
             document.getElementById("root")
         )
         

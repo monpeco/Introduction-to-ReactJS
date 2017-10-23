@@ -610,4 +610,33 @@ ReactDOM.render(
 )
 ```
 
+### Step 3: Creating a Controlled Component from the input field
+
+To start off we are going to create an **App** component that will hold all of the 
+other components.
+
+```javascript
+class App extends React.Component{
+    constructor(props){
+        super(props)
+    } 
+    render(){
+        return (
+            <div>
+                App
+            </div>
+        )
+    }
+}
+```
+
+Test the **App** component by rendering it to the page.
+
+```javascript
+ReactDOM.render(
+    <App/>,
+    document.getElementById("root")
+)
+```
+
 
