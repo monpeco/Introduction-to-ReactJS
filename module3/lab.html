@@ -18,7 +18,7 @@
                 width: 24,
                 height: 24
             }
-            return( <button style={style}>{props.lable}</button> );
+            return( <button style={style} onClick={props.handleClick} >{props.lable}</button> );
         }
         
         function PostText(props){
@@ -37,9 +37,9 @@
                 <div style={style}>
                     <PostButton label="x"/>
                     <PostText width="100" text={props.title} />
-                    <PostButton label="+"/>
+                    <PostButton label="+" handleClick={props.incrementScore} />
                     <PostText width="20" text={props.score} />
-                    <PostButton label="-"/>
+                    <PostButton label="-" handleClick={props.decrementScore} />
                 </div>
             )
         }
@@ -49,7 +49,9 @@
                 <ol>
                 {
                     props.postList.map((item, index) => 
-                        <Post key={index} title={item.title} score={item.score} />
+                        <Post key={index} title={item.title} score={item.score}
+                                incrementScore={ () => props.updateScore(index,1) }
+                                decrementScore={ () => props.updateScore(index,-1) } />
                     )
                 }
                 </ol>
@@ -75,12 +77,22 @@
                 });
                 this.setState({ items: itemsCopy, value:"" });
             }
+            updateScore(index,val){
+            	var itemsCopy = this.state.items.slice()
+            	itemsCopy[index].score += val
+            	itemsCopy.sort((a,b) => {
+            		return b.score - a.score
+            	})
+            	this.setState({items:itemsCopy}, () => {
+            	    console.log(this.state.items)
+            	})
+            }
             render(){
                 return (
                     <div>
                         <input value={this.state.value} onChange={this.handleChange.bind(this)} />
                         <button onClick={ () => this.addItem() }>Submit</button>
-                        <PostList postList={this.state.items} />
+                        <PostList postList={this.state.items} updateScore={this.updateScore.bind(this)}/>
                     </div>
                 )
             }

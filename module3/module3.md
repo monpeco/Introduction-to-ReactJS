@@ -732,3 +732,78 @@ Add to the **App render()** method:
 
 Test the **App** component by typing something in the input field and pressing the submit button. 
 A post should be added to the **PostList** with a title equal to the string entered in the input field.
+
+### Step 5: Updating the post score
+
+Next, we are going to add the functionality to update the post score when the **+** or **-** buttons are pressed.
+
+To start, add a method called **updateScore()** to the **App** component. The **updateScore()** method should 
+make a copy of the the items state attribute by using the `slice()` method. It will then reference a specific 
+index of the copied items array and update that items score based on the val argument. The copied items array 
+is then sorted and the state is set to equal the sorted copied array.
+
+Add to **App** component:
+
+```javascript
+updateScore(index,val){
+	var itemsCopy = this.state.items.slice()
+	itemsCopy[index].score += val
+	itemsCopy.sort((a,b) => {
+		return b.score - a.score
+	})
+	this.setState({items:itemsCopy})
+}
+```
+
+The **updateScore()** method needs to be passed down all the way to the button elements.
+
+Pass the **updateScore()** method into the **PostList** component. Do not forget to bind the **updateScore()** 
+method to the **App** component before passing it in.
+
+Edit in App **render()** method:
+
+```javascript
+<PostList postList = {this.state.items}
+			updateScore = {this.updateScore.bind(this)}  
+/>
+```
+	
+Create two attributes on the **Post** component that is rendered in the **PostList** component. The first 
+will be an attribute named **incrementScore** that calls **updateScore(index,1)** which increments the score of 
+the specified index in the items state array by 1. The second will be an attribute named **decrementScore** 
+that calls **updateScore(index,-1)** which decrements the score of the specified index in the items state 
+array by 1.
+
+Edit in PostList component:
+
+```javascript
+<Post key = {index} 
+		title = {item.title} 
+		score = {item.score}
+		incrementScore = {() => props.updateScore(index,1)}                         
+		decrementScore = {() => props.updateScore(index,-1)} 
+/>
+```
+
+Next, create a **handleClick** attribute on the **+** and **-** **PostButtons**. The **+** **PostButton** 
+should have its **handleClick** attribute set equal to **incrementScore**, while the **-** **PostButton** 
+should have its **handleClick** attribute set to equal **decrementScore**.
+
+Edit in Post component:
+
+```javascript
+<PostButton label = "+" handleClick = {props.incrementScore}/>
+<PostButton label = "-" handleClick = {props.decrementScore}/>
+```
+
+Lastly, edit the button element in the **PostButton** component to call **handleClick()** when it is 
+clicked. This should make the button either increment or decrement its post's score.
+
+Edit in PostButton component:
+
+```javascript
+    <button style = {style} onClick = { () => props.handleClick()}>{props.label}</button>
+```
+
+Test the **+** and **-** buttons by to see if they increment and decrement their post's scores. 
+The **PostList** should automatically sort itself by descending post score whenever a post score is updated.
