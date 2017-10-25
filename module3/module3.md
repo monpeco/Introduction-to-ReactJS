@@ -807,3 +807,78 @@ Edit in PostButton component:
 
 Test the **+** and **-** buttons by to see if they increment and decrement their post's scores. 
 The **PostList** should automatically sort itself by descending post score whenever a post score is updated.
+
+### Step 6: Removing posts
+
+Next, we are going to add the functionality to remove 
+posts.
+
+To start, we are going to add a method called 
+**removeItem()** to the **App** component. 
+The **removeItem()** method will make a copy 
+of the items state array by using the `slice()` 
+method. It will then remove the specified index 
+using the `splice()` method and then sort the 
+array by descending score. It will then update 
+the state to equal the sorted copied items array.
+
+Add to App component:
+
+```javascript
+    removeItem(index){
+        var itemsCopy = this.state.items.slice()
+        itemsCopy.splice(index,1);
+        itemsCopy.sort((a,b) => {
+            return b.score - a.score
+        })
+
+        this.setState({items:itemsCopy})
+    }
+```
+
+The **removeItem()** method needs to be passed 
+down all the way to the button elements.
+
+Pass the **removeItem()** method into the **PostList** 
+component. Do not forget to bind the **removeItem()** 
+method to the **App** component before passing it in.
+
+Edit in **App** component **render()** method:
+
+```javascript
+    <PostList postList = {this.state.items}
+                updateScore = {this.updateScore.bind(this)}  
+                removeItem = {this.removeItem.bind(this)}
+    />
+```
+
+Next, add a **removeItem** attribute in the **Post** 
+component that is rendered in the **PostList** component.
+
+The **removeItem** attribute should call the **removeItem()**
+ method that was passed in with the **PostList**'s properties.
+
+Edit in PostList component:
+
+```javascript
+    <Post key = {index} 
+            title = {item.title} 
+            score = {item.score} 
+            incrementScore = {() => props.updateScore(index,1)}                         
+            decrementScore = {() => props.updateScore(index,-1)} 
+            removeItem = {() => props.removeItem(index)}/>
+```
+
+Next, create a **handleClick** attribute on the "x" 
+**PostButton**. The "x" PostButton should have its **handleClick** 
+attribute set equal to the **removeItem()** method that was passed 
+in with **PostButton**'s properties.
+
+Edit in **Post** component:
+
+```javascript
+    <PostButton label = "x" handleClick = {props.removeItem}/>
+```
+
+Test the "x" button to see if the posts are able to be removed.
+
