@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+                
+    
+    class PostApplication extends React.Component{
+    	constructor(props){
+    		super(props);
+    		
+    		var posts = [];
+    		this.state={ posts: posts, index: 0 };
+   
+    		this.handleChange = this.handleChange.bind(this);
+    		this.handleClick = this.handleClick.bind(this);
+    	}
+    	handleChange(event){
+    	    console.log("name: " + event.target.name + ", value: " + event.target.value);
+    		this.setState( {currentPost: event.target.value} );
+
+    	}
+    	handleClick(event){
+    	    if(event.target.name == "submitButton"){
+    	        console.log("submitButton");
+    	        console.log("currentPost: " + this.state.currentPost);
+
+                var posts_temp = [];
+                
+                if(this.state.posts.length > 0){   
+                    posts_temp.push( this.state.posts )
+                }
+
+                posts_temp.push( <button name="closeButton" value={this.state.closeButton} onClick={this.handleClick} key={this.state.index}>X</button> ) 
+                posts_temp.push( <h1>{this.state.currentPost}</h1> )
+                posts_temp.push( <UpButton /> )
+                posts_temp.push( <VotesText /> )
+                posts_temp.push( <DownButton /> )
+
+    		    this.setState({ posts: posts_temp, index: (this.state.index+1) }, () => {
+    	            console.log("posts: " + this.state.posts)
+    		    });
+    	    }
+    	    if(event.target.name == "closeButton"){
+    	        console.log("handleClick: " + event.target.name);
+                for (var i in this.state.posts) {
+                  console.log(this.state.posts[i]);
+                }
+            }
+    	}
+    	render(){
+    		return(
+                <div>
+                    <div>
+                	    <InputField value={this.state.inputName} handleChange={this.handleChange} />
+                	    
+                	    <SubmitButton value={this.state.submitButton} handleClick={this.handleClick}/>
+                	</div>
+                    <div>
+                        {this.state.posts}
+            	    </div>
+            	</div>    
+    		);
+    	}
+    }
+    
+    function InputField(props){
+    	return( <input name="inputName" type="text" value={props.value} onChange={props.handleChange} /> );
+    }
+        
+    function SubmitButton(props){
+    	return( <button name="submitButton" value={props.value}  onClick={props.handleClick} >Submit</button> );
+    }
+    
+    function CloseButton(){
+    	return( <button name="closeButton" >X</button> );
+    }
+    
+    function PostText(){
+    	return( <span name="postText">This is a example post</span> );
+    }
+
+    function UpButton(){
+    	return( <button name="UpButton" >+</button> );
+    }
+    
+    function VotesText(){
+    	return( <span name="votesText">3</span> );
+    }
+
+    function DownButton(){
+    	return( <button name="UpButton" >-</button> );
+    }
+
+    ReactDOM.render(
+        <PostApplication/>,
+    	document.getElementById("root")
+    );
+
+        
+    </script>
+</body>
+</html>
