@@ -882,3 +882,42 @@ Edit in **Post** component:
 
 Test the "x" button to see if the posts are able to be removed.
 
+
+
+---
+
+### Module 3 | Lists and Forms   Module 3 Lab   Module 3 Lab
+
+# Module 3 Lab Intructions
+
+The assignment for this module is to build a course registration system that allows users to sign up for a course by submitting a form. All of the form submissions will be recorded into a table.
+
+![lab3](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/64e85aefc7ee6d2954bcf53f122b4913/asset-v1:Microsoft+DEV281x+4T2017+type@asset+block/m3lab1.PNG)
+
+# Visual Elements
+
+The user should see the following visual elements:
+
+1. An input field for the users first name
+2. An input field for the users last name
+3. An select dropdown that includes the following options: "Science Lab","Swimming","Cooking","Painting"
+4. A section labeled "Check all that apply" that includes 3 checkboxes
+  * A checkbox labeled a) Dietary Restrictions
+  * A checkbox labeled b) Physical Disabilities
+  * A checkbox labeled c) Medical Needs
+5. A submit button
+6. A table that has the following column labels: "Remove","FirstName","LastName","Activity","Restrictions"
+
+# Functional Elements
+
+The user should be able to do the following:
+
+1. If the user clicks on the Submit button, a new row will be added to the table based on the data entered into the form. Each row should the show the submitted first name, last name, activity, and restrictions as well as a remove button.
+2. The restrictions section should populate based on the checkboxes that were selected. For each checkbox checked, display an "a", "b", or "c" depending on which boxes were checked. If multiple checkboxes are checked, display multiple letters.
+3. If the user clicks on the remove button, that particular row will be removed from the table
+4. The form data should reset whenever a submission is made.
+
+# Module 3 Lab Submission Guidelines
+
+Please create a codepen containing your solution and post a link to your codepen in the discussions forums. Codepen is used so other students can have an easier time viewing and testing your application. A link to the appropriate section of the forums can be found at the bottom of this page. Your submission will be critiqued by your peers but will not count towards your overall course grade.
+
