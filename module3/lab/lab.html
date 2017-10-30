@@ -13,10 +13,19 @@
 
     <script type="text/babel">
         var activity = ["Science Lab","Swimming","Cooking","Painting"];
-        var elements = activity.map( (item,index) => {
+        var elements_activity = activity.map( (item,index) => {
           return <option key={index} value={item}>{item}</option>
         });
-        
+
+        var activity = ["Science Lab","Swimming","Cooking","Painting"];
+        var elements_activity = activity.map( (item,index) => {
+          return <option key={index} value={item}>{item}</option>
+        });
+
+        var restriction = ["a) Dietary Restictions","b) Physical Disabilities","c) Medical Needs"];
+        var elements_restriction = restriction.map( (item,index) => {
+          return <div><label><input type="checkbox" value="first_checkbox" />{item}</label><br /></div>
+        });
         
         class App extends React.Component{
             constructor(props){
@@ -32,7 +41,11 @@
                         <p>Last Name</p>
                         <input value={this.state.value}  />
                         <p>Select Activity</p>
-                        <select>{elements}</select>
+                        <select>{elements_activity}</select>
+                        
+                        <p>Check all that apply:</p>
+						{elements_restriction}
+                        <button >Submit</button>
                         
                         
                     </div>
