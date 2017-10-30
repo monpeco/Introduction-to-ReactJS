@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        var activity = ["Science Lab","Swimming","Cooking","Painting"];
+        var elements = activity.map( (item,index) => {
+          return <option key={index} value={item}>{item}</option>
+        });
+        
+        
+        class App extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {value:"", items: []};
+            } 
+
+            render(){
+                return (
+                    <div>
+                        <p>First Name</p>
+                        <input value={this.state.value}  />
+                        <p>Last Name</p>
+                        <input value={this.state.value}  />
+                        <p>Select Activity</p>
+                        <select>{elements}</select>
+                        
+                        
+                    </div>
+                )
+            }
+        }
+        
+        ReactDOM.render(
+            <App />,
+            document.getElementById("root")
+        )
+        
+    </script>
+</body>
+</html>
