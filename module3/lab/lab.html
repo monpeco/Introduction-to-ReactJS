@@ -27,10 +27,32 @@
           return <div><label><input type="checkbox" value="first_checkbox" />{item}</label><br /></div>
         });
         
+        function RemoveButton(props){
+            return( <button>{props.label}</button> )
+        }
+        
+        function RegistrationLine(props){
+            return(
+                <div>
+                    <RemoveButton label={props.text} />
+                </div>
+            )
+        }
+        
+        function RegistrationList(props){
+            return(
+                <ol>
+                    {props.registrationList.map((item) => 
+                        <RegistrationLine text={item} />
+                    )}
+                </ol>
+            )
+        }
+        
         class App extends React.Component{
             constructor(props){
                 super(props)
-                this.state = {value:"", items: []};
+                this.state = {value:"", items: ["Science Lab","Swimming","Cooking","Painting"] };
             } 
 
             render(){
@@ -45,7 +67,9 @@
                         
                         <p>Check all that apply:</p>
 						{elements_restriction}
-                        <button >Submit</button>
+                        <button>Submit</button>
+                        
+                        <RegistrationList registrationList={this.state.items}/>
                         
                         
                     </div>
