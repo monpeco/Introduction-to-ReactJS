@@ -31,6 +31,14 @@
             return( <button>{props.label}</button> )
         }
         
+        function PostText(props){
+            var style = {
+                border: "1px solid black",
+                width: props.width
+            }
+            return ( <div style={style}>{props.text}</div> );
+        }
+        
         function RegistrationLine(props){
             return(
                 <div>
@@ -52,9 +60,14 @@
         class App extends React.Component{
             constructor(props){
                 super(props)
-                this.state = {value:"", items: ["Science Lab","Swimming","Cooking","Painting"] };
+                this.state = {value:"", items: [] };
+                this.addItem = this.addItem.bind(this);
             } 
-
+            addItem(){
+                var itemsCopy = this.state.items.slice();
+                itemsCopy.push({"title":truncatedString, "score":0});
+                this.setState({ items: itemsCopy, value:"" });
+            }
             render(){
                 return (
                     <div>
