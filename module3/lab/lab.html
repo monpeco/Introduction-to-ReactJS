@@ -18,16 +18,39 @@
                              {id: 'b', desc: 'Physical Disabilities'},
                              {id: 'c', desc: 'Medical Needs'} ];
                              
-
+        function TextInput(props){
+        	return( <input value={props.value} name={props.name} onChange={props.handleChange} /> );
+        }
+        
+        function Form(props){
+        	return( <form> 
+                	    <TextInput 
+                	        name="firstName"
+                			handleChange={props.handleChange}
+                	    /> 
+        	        </form>
+        	);
+        }
         
         class App extends React.Component{
             constructor(props){
                 super(props)
+                this.state = { list: [], values: {} };
+                this.handleChange = this.handleChange.bind(this);
             } 
 
+            handleChange(event){
+                var inputName = event.target.name;
+                var inputValue = event.target.value;
+                
+                console.log("inputName: " + inputName);
+                console.log("inputValue: " + inputValue);
+            }
             render(){
                 return (
                     <div>
+                    <Form 
+                        handleChange={this.handleChange} />
                     </div>
                 )
             }
