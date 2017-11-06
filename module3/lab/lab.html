@@ -43,8 +43,13 @@
                 var inputName = event.target.name;
                 var inputValue = event.target.value;
                 
-                console.log("inputName: " + inputName);
-                console.log("inputValue: " + inputValue);
+                this.setState(function(prevState){
+                    prevState.values[inputName] = inputValue
+                    return {values: prevState.values}
+                },function(){
+                    console.log(this.state.values);
+                }); 
+
             }
             render(){
                 return (
