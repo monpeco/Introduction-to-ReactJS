@@ -19,13 +19,21 @@
                              {id: 'c', desc: 'Medical Needs'} ];
                              
         function TextInput(props){
-        	return( <input value={props.value} name={props.name} onChange={props.handleChange} /> );
+            var style = {
+                display: "flex"
+            }
+        	return( <input style={style} value={props.value} name={props.name} onChange={props.handleChange} /> );
         }
         
         function Form(props){
         	return( <form> 
                 	    <TextInput 
                 	        name="firstName"
+                			handleChange={props.handleChange}
+                	    /> 
+                	    
+                	    <TextInput 
+                	        name="lastName"
                 			handleChange={props.handleChange}
                 	    /> 
         	        </form>
