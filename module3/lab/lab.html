@@ -25,6 +25,20 @@
         	return( <input style={style} value={props.value} name={props.name} onChange={props.handleChange} /> );
         }
         
+        function SelectInput(props){
+            var style = {
+                display: "flex"
+            }
+			var options = activity.map( (item) => 
+				<option value={item}>{item}</option>
+			);
+        	return( 
+				<select style={style} value={props.value} name={props.name} onChange={props.handleChange}>
+					{options}
+				</select>
+			);
+        }
+        
         function Form(props){
         	return( <form> 
                 	    <TextInput 
@@ -34,6 +48,11 @@
                 	    
                 	    <TextInput 
                 	        name="lastName"
+                			handleChange={props.handleChange}
+                	    /> 
+                	    
+                	    <SelectInput 
+                	        name="activity"
                 			handleChange={props.handleChange}
                 	    /> 
         	        </form>
