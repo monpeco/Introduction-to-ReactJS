@@ -39,6 +39,31 @@
 			);
         }
         
+        function Checkbox(props){
+			var style = {
+			}
+			return(
+				<div style={style}>
+				    <label>
+    					<input type="checkbox"
+    					name={props.name}
+    					value={props.id}
+    					checked={props.cheked}
+    					onChange={props.handleChange}
+    					/>{props.id}) {props.desc}
+					</label>
+				</div>
+			);
+		}
+		
+		function CheckBoxGroup(props){
+			return(
+					<div>
+					    {restriction.map((item) => { return <Checkbox name={props.name} id={item.id} desc={item.desc} handleChange={props.handleChange} /> } )}
+					</div>
+			);
+		}
+        
         function Form(props){
         	return( <form> 
                 	    <TextInput 
@@ -53,6 +78,11 @@
                 	    
                 	    <SelectInput 
                 	        name="activity"
+                			handleChange={props.handleChange}
+                	    /> 
+                	    
+                	    <CheckBoxGroup 
+                	        name="restrictions"
                 			handleChange={props.handleChange}
                 	    /> 
         	        </form>
