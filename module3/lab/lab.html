@@ -44,6 +44,7 @@
         }
         
         function Checkbox(props){
+            console.log(props);
 			var style = {
 			}
 			return(
@@ -181,7 +182,7 @@
  
                     return {values: prevState.values}
                 },function(){
-                    //console.log(this.state.values);
+                    console.log(this.state.values);
                 }); 
 
             }
@@ -189,7 +190,7 @@
                 var arr = {};
                 for (var key in this.state.values){
                     arr[key]  = this.state.values[key];
-                  //console.log(key + " -> " + this.state.values[key])  
+                    console.log(key + " -> " + this.state.values[key])  
                 }
 
 
@@ -210,7 +211,7 @@
 
                 this.setState({ list: listCopy, values:{} }
                 ,function(){
-                    //console.log(this.state);
+                    console.log(this.state);
                 });
                 
                 document.getElementById("create-form").reset();
