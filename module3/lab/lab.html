@@ -118,9 +118,17 @@
             var style = {
                 display: "flex"
             }
+            
+            var remove = [];
+            if(props.position == 0){
+                remove.push(<label>Remove</label>);
+            }else{
+                remove.push(<PostButton label="x" handleClick = {props.removeItem} />);
+            }
+            
             return(
                 <div style={style}>
-                    <PostButton label="x" handleClick = {props.removeItem} />
+                    {remove}
                     <PostText width="200" text={props.firstName} />
                     <PostText width="200" text={props.lastName} />
                     <PostText width="200" text={props.activity} />
@@ -134,6 +142,7 @@
                 {
                     props.postList.map((item, index) => 
                         <Post key={index} 
+                            position={index}
                             firstName={item.firstName} 
                             lastName={item.lastName}
                             activity={item.activity} 
@@ -179,7 +188,7 @@
                 var arr = {};
                 for (var key in this.state.values){
                     arr[key]  = this.state.values[key];
-                  console.log(key + " -> " + this.state.values[key])  
+                  //console.log(key + " -> " + this.state.values[key])  
                 }
 
 
@@ -200,7 +209,7 @@
 
                 this.setState({ list: listCopy, values:{} }
                 ,function(){
-                    console.log(this.state);
+                    //console.log(this.state);
                 });
                 
                 document.getElementById("create-form").reset();
