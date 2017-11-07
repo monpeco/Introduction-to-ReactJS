@@ -162,7 +162,24 @@
                 }); 
 
             }
+            addItem(){
+                var arr = {};
+                for (var key in this.state.values){
+                    arr[key]  = this.state.values[key];
+                  console.log(key + " -> " + this.state.values[key])  
+                }
 
+
+                var listCopy = this.state.list.slice();
+                var sFirstName = this.state.firstName;
+                
+                listCopy.push(arr);
+
+                this.setState({ list: listCopy, values:{} }
+                ,function(){
+                    console.log(this.state);
+                });
+            }
             render(){
                 return (
                     <div>
