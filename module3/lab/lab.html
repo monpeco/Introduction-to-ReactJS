@@ -158,15 +158,20 @@
  
                     return {values: prevState.values}
                 },function(){
-                    console.log(this.state.values);
+                    //console.log(this.state.values);
                 }); 
 
             }
+
             render(){
                 return (
                     <div>
-                    <Form 
-                        handleChange={this.handleChange} />
+                        <Form 
+                            handleChange={this.handleChange} />
+
+                        <button onClick={ () => this.addItem() }>Submit</button>
+                        <PostList postList={this.state.list} 
+                        />
                     </div>
                 )
             }
