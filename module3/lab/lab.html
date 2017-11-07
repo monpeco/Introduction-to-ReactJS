@@ -89,6 +89,50 @@
         	);
         }
         
+        
+        function PostButton(props){
+            var style = {
+                width: 24,
+                height: 24
+            }
+            return( <button style={style} onClick={props.handleClick} >{props.label}</button> );
+        }
+        
+        function PostText(props){
+            var style = {
+                border: "1px solid black",
+                width: props.width
+            }
+            return ( <div style={style}>{props.text}</div> );
+        }
+        
+        function Post(props){
+            var style = {
+                display: "flex"
+            }
+            return(
+                <div style={style}>
+                    <PostButton label="x" handleClick = {props.removeItem} />
+                    <PostText width="100" text={props.title} />
+                    <PostText width="20" text={props.score} />
+                </div>
+            )
+        }
+        function PostList(props){
+            return(
+                <ol>
+                {
+                    props.postList.map((item, index) => 
+                        <Post key={index} title={item.title} score={item.score}
+                                incrementScore={ () => props.updateScore(index,1) }
+                                decrementScore={ () => props.updateScore(index,-1) } 
+                                removeItem = {() => props.removeItem(index)} />
+                    )
+                }
+                </ol>
+            )
+        }
+        
         class App extends React.Component{
             constructor(props){
                 super(props)
