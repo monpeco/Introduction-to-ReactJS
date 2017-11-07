@@ -101,7 +101,17 @@
                 var inputValue = event.target.value;
                 
                 this.setState(function(prevState){
-                    prevState.values[inputName] = inputValue
+                    
+                    if (inputName == "restrictions"){
+                        if(typeof prevState.values[inputName] === 'undefined')
+                            prevState.values[inputName] = inputValue;
+                        else{
+                            prevState.values[inputName] = prevState.values[inputName] + inputValue;
+                        }
+                    }else{
+                        prevState.values[inputName] = inputValue
+                    }
+ 
                     return {values: prevState.values}
                 },function(){
                     console.log(this.state.values);
