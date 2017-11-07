@@ -178,7 +178,17 @@
                 var listCopy = this.state.list.slice();
                 var sFirstName = this.state.firstName;
                 
+                if(this.state.list.length == 0){
+                    var header = {};
+                    header['firstName']  = 'firstName';
+                    header['lastName']  = 'lastName';
+                    header['activity']  = 'activity';
+                    header['restrictions']  = 'restrictions';
+                    listCopy.push(header);
+                }
+                
                 listCopy.push(arr);
+
 
                 this.setState({ list: listCopy, values:{} }
                 ,function(){
