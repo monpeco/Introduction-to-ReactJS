@@ -65,7 +65,7 @@
 		}
         
         function Form(props){
-        	return( <form> 
+        	return( <form id="create-form" > 
                 	    <TextInput 
                 	        name="firstName"
                 			handleChange={props.handleChange}
@@ -184,6 +184,8 @@
                 ,function(){
                     console.log(this.state);
                 });
+                
+                document.getElementById("create-form").reset();
             }
             removeItem(index){
                 var listCopy = this.state.list.slice()
