@@ -113,8 +113,10 @@
             return(
                 <div style={style}>
                     <PostButton label="x" handleClick = {props.removeItem} />
-                    <PostText width="100" text={props.title} />
-                    <PostText width="20" text={props.score} />
+                    <PostText width="100" text={props.firstName} />
+                    <PostText width="100" text={props.lastName} />
+                    <PostText width="100" text={props.activity} />
+                    <PostText width="100" text={props.restrictions} />
                 </div>
             )
         }
@@ -123,10 +125,12 @@
                 <ol>
                 {
                     props.postList.map((item, index) => 
-                        <Post key={index} title={item.title} score={item.score}
-                                incrementScore={ () => props.updateScore(index,1) }
-                                decrementScore={ () => props.updateScore(index,-1) } 
-                                removeItem = {() => props.removeItem(index)} />
+                        <Post key={index} 
+                            firstName={item.firstName} 
+                            lastName={item.lastName}
+                            activity={item.activity} 
+                            restrictions={item.restrictions}
+                        />
                     )
                 }
                 </ol>
