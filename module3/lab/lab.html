@@ -130,6 +130,7 @@
                             lastName={item.lastName}
                             activity={item.activity} 
                             restrictions={item.restrictions}
+                            removeItem = {() => props.removeItem(index)}
                         />
                     )
                 }
@@ -184,6 +185,12 @@
                     console.log(this.state);
                 });
             }
+            removeItem(index){
+                var listCopy = this.state.list.slice()
+                listCopy.splice(index,1);
+
+                this.setState({list:listCopy})
+            }
             render(){
                 return (
                     <div>
@@ -192,6 +199,7 @@
 
                         <button onClick={ () => this.addItem() }>Submit</button>
                         <PostList postList={this.state.list} 
+                            removeItem={this.removeItem.bind(this)}
                         />
                     </div>
                 )
