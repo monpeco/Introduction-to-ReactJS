@@ -20,6 +20,8 @@
                              
         function TextInput(props){
             var style = {
+                width: 160,
+                height: 26,
                 display: "flex"
             }
         	return( <input style={style} value={props.value} name={props.name} onChange={props.handleChange} /> );
@@ -27,6 +29,8 @@
         
         function SelectInput(props){
             var style = {
+                width: 160,
+                height: 26,
                 display: "flex"
             }
 			var options = activity.map( (item) => 
@@ -66,21 +70,25 @@
         
         function Form(props){
         	return( <form id="create-form" > 
+                	    <label>First Name:</label>
                 	    <TextInput 
                 	        name="firstName"
                 			handleChange={props.handleChange}
                 	    /> 
                 	    
+                	    <label>Last Name:</label>
                 	    <TextInput 
                 	        name="lastName"
                 			handleChange={props.handleChange}
                 	    /> 
                 	    
+                	    <label>Select Activity:</label>
                 	    <SelectInput 
                 	        name="activity"
                 			handleChange={props.handleChange}
                 	    /> 
                 	    
+                	    <label>Check all that apply:</label>
                 	    <CheckBoxGroup 
                 	        name="restrictions"
                 			handleChange={props.handleChange}
@@ -100,7 +108,7 @@
         
         function PostText(props){
             var style = {
-                border: "1px solid black",
+                textAlign: "center",
                 width: props.width
             }
             return ( <div style={style}>{props.text}</div> );
@@ -113,9 +121,9 @@
             return(
                 <div style={style}>
                     <PostButton label="x" handleClick = {props.removeItem} />
-                    <PostText width="100" text={props.firstName} />
-                    <PostText width="100" text={props.lastName} />
-                    <PostText width="100" text={props.activity} />
+                    <PostText width="200" text={props.firstName} />
+                    <PostText width="200" text={props.lastName} />
+                    <PostText width="200" text={props.activity} />
                     <PostText width="100" text={props.restrictions} />
                 </div>
             )
@@ -204,12 +212,16 @@
                 this.setState({list:listCopy})
             }
             render(){
+                var style = {
+                    width: 120,
+                    height: 36
+                }
                 return (
                     <div>
                         <Form 
                             handleChange={this.handleChange} />
 
-                        <button onClick={ () => this.addItem() }>Submit</button>
+                        <button style={style} onClick={ () => this.addItem() }>Submit</button>
                         <PostList postList={this.state.list} 
                             removeItem={this.removeItem.bind(this)}
                         />
