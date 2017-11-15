@@ -44,17 +44,13 @@
         }
         
         function Checkbox(props){
-            console.log(props);
-			var style = {
-			}
 			return(
-				<div style={style}>
+				<div>
 				    <label>
     					<input type="checkbox"
     					name={props.name}
     					value={props.id}
     					checked={props.cheked}
-    					defaultChecked={true}
     					onChange={props.handleChange}
     					/>{props.id}) {props.desc}
 					</label>
@@ -64,9 +60,9 @@
 		
 		function CheckBoxGroup(props){
 			return(
-					<div>
-					    {restriction.map((item) => { return <Checkbox name={props.name} id={item.id} desc={item.desc} handleChange={props.handleChange} /> } )}
-					</div>
+				<div>
+				    {restriction.map((item) => { return <Checkbox name={props.name} id={item.id} desc={item.desc} handleChange={props.handleChange} /> } )}
+				</div>
 			);
 		}
         
@@ -182,7 +178,7 @@
  
                     return {values: prevState.values}
                 },function(){
-                    console.log(this.state.values);
+                    //console.log(this.state.values);
                 }); 
 
             }
@@ -190,7 +186,7 @@
                 var arr = {};
                 for (var key in this.state.values){
                     arr[key]  = this.state.values[key];
-                    console.log(key + " -> " + this.state.values[key])  
+                  //console.log(key + " -> " + this.state.values[key])  
                 }
 
 
@@ -211,7 +207,7 @@
 
                 this.setState({ list: listCopy, values:{} }
                 ,function(){
-                    console.log(this.state);
+                    //console.log(this.state);
                 });
                 
                 document.getElementById("create-form").reset();
